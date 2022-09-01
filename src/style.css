@@ -1,0 +1,24 @@
+html,
+body {
+  min-width: 100vw !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+#app,
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
+#app {
+  overflow-x: hidden;
+}
+
+/* iOS禁止微信调整字体大小 */
+body {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+}

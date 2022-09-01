@@ -1,0 +1,22 @@
+.bigTitle {
+  font-size: 0.6133rem;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: #242424;
+}
+.secondTitle {
+  font-size: 0.4rem;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: #242424;
+}
+
+@mixin flexOne($center) {
+  display: flex;
+  align-items: $center;
+  justify-content: space-between;
+}
+
+p {
+  margin: 0;
+}

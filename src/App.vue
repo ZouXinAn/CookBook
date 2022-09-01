@@ -2,8 +2,8 @@
  * @Author: zoujiahao
  * @Date: 2022-08-24 15:52:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-08-29 13:21:25
- * @FilePath: \CookBook\src\App.vue
+ * @LastEditTime: 2022-09-01 14:17:09
+ * @FilePath: \CookBooks\src\App.vue
  * @Description: 
 -->
 <template>
@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import './util/checkPlatfrom.js';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 </script>

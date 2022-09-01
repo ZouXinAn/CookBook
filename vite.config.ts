@@ -2,8 +2,8 @@
  * @Author: zoujiahao
  * @Date: 2022-08-24 15:52:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-08-29 11:15:36
- * @FilePath: \CookBook\vite.config.ts
+ * @LastEditTime: 2022-09-01 13:43:13
+ * @FilePath: \CookBooks\vite.config.ts
  * @Description: 
  */
 import { defineConfig } from 'vite'
@@ -24,8 +24,10 @@ export default defineConfig({
       resolvers: [VantResolver()],
   })],
   resolve:{
-    alias:[
-      {find:'@',replacement:resolve(__dirname, '.', 'src')}
+    alias:
+    [
+    {find:'@',replacement:resolve(__dirname, '.', 'src')},
+    {find:'/image',replacement:'src/assets/image'}
     ]
   },
   server:{

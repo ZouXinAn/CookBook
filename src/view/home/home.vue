@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 16:35:26
+ * @LastEditTime: 2022-09-01 16:38:48
  * @FilePath: \CookBooks\src\view\home\home.vue
  * @Description: 
 -->
@@ -58,7 +58,6 @@ const changePage = (v: string): void => {
 
 <style lang="scss" scoped>
 #home {
-  position: relative;
   .van-tabbar {
     position: fixed;
     bottom: 0;

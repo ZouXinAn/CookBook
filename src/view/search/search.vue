@@ -2,8 +2,8 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 11:09:18
- * @FilePath: \CookBook\src\view\search\search.vue
+ * @LastEditTime: 2022-09-01 16:11:09
+ * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
 <template>
@@ -142,16 +142,17 @@ const getBack = () => {
     overflow-y: auto;
     padding-left: 0.5333rem;
     padding-right: calc(0.5333rem - 0.32rem);
+    .searchContent {
+      padding-top: 0.32rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+    }
   }
-  .searchContent {
-    padding-top: 0.32rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-  }
+
   .searchHistory {
     margin-top: 0.4rem;
   }

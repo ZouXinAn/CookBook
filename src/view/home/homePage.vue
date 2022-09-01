@@ -2,8 +2,8 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-08-31 16:05:37
- * @FilePath: \CookBook\src\view\home\homePage.vue
+ * @LastEditTime: 2022-09-01 15:40:27
+ * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
 <template>
@@ -28,7 +28,7 @@
     <div class="hotBook">
       <div class="titlebar">
         <span class="bigTitle"> 热门菜谱 </span>
-        <span class="checkAll"
+        <span class="checkAll" @click="checkMore('热门菜谱')"
           >查看全部
           <img style="height: 0.2933rem; width: 0.1733rem; margin-left: 0.1333rem" src="@/assets/image/rightArrow.png" alt="" />
         </span>
@@ -39,7 +39,7 @@
     </div>
     <div class="todayRecommond">
       <span class="bigTitle"> 今日推荐 </span>
-      <div class="recommondContent">
+      <div class="recommondContent" @click="checkMore('今日推荐')">
         <p>温暖·好味</p>
         <p>快来露一手~</p>
         <div class="lineDiv"></div>
@@ -51,7 +51,7 @@
     </div>
     <div class="todayRecommond eazyCook">
       <span class="bigTitle"> 新手不翻车 </span>
-      <div class="recommondContent">
+      <div class="recommondContent" @click="checkMore('新手不翻车')">
         <p>有手就会</p>
         <p>美味简单做~</p>
         <div class="lineDiv"></div>
@@ -89,6 +89,14 @@ import { useRouter } from 'vue-router';
 import LoadingMore from '@/components/LoadingMore.vue';
 
 const $router = useRouter();
+
+const checkMore = (type: string) => {
+  // console.log(type);
+  $router.push({
+    path: 'listPage',
+    query: { type },
+  });
+};
 
 const goSearch = () => {
   $router.push('/search');

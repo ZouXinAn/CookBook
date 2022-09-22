@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 10:53:38
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 15:23:10
+ * @LastEditTime: 2022-09-22 15:10:42
  * @FilePath: \CookBooks\src\router\router.ts
  * @Description: 
  */
@@ -35,6 +35,11 @@ let routes = [
     path:'/listPage',
     name:'listPage',
     component:()=> import('@/view/listPage/listPage.vue')
+  },
+  {
+    path:'/cookDetail',
+    name:'cookDetail',
+    component:()=> import('@/view/listPage/cookDetail.vue')
   },
   {
     path: '/:pathMatch(.*)*', // 不识别的path自动匹配404

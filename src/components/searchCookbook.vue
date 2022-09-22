@@ -2,12 +2,12 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 15:22:21
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 11:07:17
- * @FilePath: \CookBook\src\components\searchCookbook.vue
+ * @LastEditTime: 2022-09-22 15:20:22
+ * @FilePath: \CookBooks\src\components\searchCookbook.vue
  * @Description: 
 -->
 <template>
-  <div class="searchCookBook">
+  <div class="searchCookBook" @click="goDetail">
     <img :class="item.itemType" :src="imgUrl" alt="" />
     <p>麻婆豆腐</p>
     <van-tag type="primary" size="large">家常菜</van-tag>
@@ -15,6 +15,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useRouter } from 'vue-router';
+
 interface searchItem {
   src: string;
   [propname: string]: any;
@@ -24,6 +26,12 @@ let $props = defineProps<{ item: searchItem }>();
 // ../assets/images/${props.item.src}@2x.png
 let imgUrl = new URL(`../assets/image/${$props.item.src}`, import.meta.url).href;
 
+const $router = useRouter();
+
+const goDetail = () => {
+  console.log('item:', $props.item);
+  $router.push({ path: '/cookDetail', query: { cookId: 1003 } });
+};
 /**
  *
  * 122112

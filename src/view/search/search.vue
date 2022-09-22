@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 16:11:09
+ * @LastEditTime: 2022-09-22 13:36:20
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -51,7 +51,10 @@
     <!-- TODO瀑布流 -->
     <div v-show="!isShowItem" class="allSearchContent">
       <div class="searchContent">
-        <search-cookbook v-for="(item, i) in list" :item="{ ...item }" :key="i" />
+        <search-cookbook v-for="(item, i) in waterfallData.line1" :item="{ ...item }" :key="i" />
+      </div>
+      <div class="searchContent">
+        <search-cookbook v-for="(item, i) in waterfallData.line2" :item="{ ...item }" :key="i" />
       </div>
     </div>
   </div>
@@ -90,7 +93,67 @@ let list = $ref([
     labelName: '家常菜',
     itemType: 'shortImg',
   },
+  {
+    src: 'searchitemShort1.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'shortImg',
+  },
+  {
+    src: 'searchitemLong2.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'longImg',
+  },
+  {
+    src: 'searchitemLong2.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'longImg',
+  },
+  {
+    src: 'searchitemShort1.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'shortImg',
+  },
+  {
+    src: 'searchitemLong2.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'longImg',
+  },
+  {
+    src: 'searchitemShort1.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'shortImg',
+  },
+  {
+    src: 'searchitemLong2.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'longImg',
+  },
+  {
+    src: 'searchitemShort1.png',
+    cookName: '麻婆豆腐',
+    labelName: '家常菜',
+    itemType: 'shortImg',
+  },
 ]);
+
+let waterfallData = {
+  line1: [],
+  line2: [],
+};
+
+// 处理瀑布流数据
+for (const i in list) {
+  if (i % 2 === 0) {
+    waterfallData.line1.push(list[i]);
+  } else waterfallData.line2.push(list[i]);
+}
 
 const isShowItem = computed({
   get: () => {
@@ -142,14 +205,12 @@ const getBack = () => {
     overflow-y: auto;
     padding-left: 0.5333rem;
     padding-right: calc(0.5333rem - 0.32rem);
+    display: flex;
+    flex-direction: row;
     .searchContent {
       padding-top: 0.32rem;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      // display: flex;
-      // flex-direction: row;
-      // flex-wrap: wrap;
+      flex-direction: column;
     }
   }
 

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 15:40:27
+ * @LastEditTime: 2022-09-22 13:39:22
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -28,7 +28,7 @@
     <div class="hotBook">
       <div class="titlebar">
         <span class="bigTitle"> 热门菜谱 </span>
-        <span class="checkAll" @click="checkMore('热门菜谱')"
+        <span class="checkAll" @click="checkMore(1)"
           >查看全部
           <img style="height: 0.2933rem; width: 0.1733rem; margin-left: 0.1333rem" src="@/assets/image/rightArrow.png" alt="" />
         </span>
@@ -39,7 +39,7 @@
     </div>
     <div class="todayRecommond">
       <span class="bigTitle"> 今日推荐 </span>
-      <div class="recommondContent" @click="checkMore('今日推荐')">
+      <div class="recommondContent" @click="checkMore(2)">
         <p>温暖·好味</p>
         <p>快来露一手~</p>
         <div class="lineDiv"></div>
@@ -51,7 +51,7 @@
     </div>
     <div class="todayRecommond eazyCook">
       <span class="bigTitle"> 新手不翻车 </span>
-      <div class="recommondContent" @click="checkMore('新手不翻车')">
+      <div class="recommondContent" @click="checkMore(3)">
         <p>有手就会</p>
         <p>美味简单做~</p>
         <div class="lineDiv"></div>

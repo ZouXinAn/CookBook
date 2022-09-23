@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-22 13:36:20
+ * @LastEditTime: 2022-09-23 11:27:26
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -51,10 +51,10 @@
     <!-- TODO瀑布流 -->
     <div v-show="!isShowItem" class="allSearchContent">
       <div class="searchContent">
-        <search-cookbook v-for="(item, i) in waterfallData.line1" :item="{ ...item }" :key="i" />
+        <search-cookbook v-for="(item, i) in waterfallData.line1" :item="item" :key="i" />
       </div>
       <div class="searchContent">
-        <search-cookbook v-for="(item, i) in waterfallData.line2" :item="{ ...item }" :key="i" />
+        <search-cookbook v-for="(item, i) in waterfallData.line2" :item="item" :key="i" />
       </div>
     </div>
   </div>
@@ -63,6 +63,7 @@
 </template>
 
 <script lang="ts" setup>
+import { WaterFall } from '@/util/commonType';
 import { computed, onMounted, ref } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 import searchCookBook from '@/components/searchCookBook.vue';
@@ -143,13 +144,14 @@ let list = $ref([
   },
 ]);
 
-let waterfallData = {
+let waterfallData: WaterFall = {
   line1: [],
   line2: [],
 };
 
+let i: any;
 // 处理瀑布流数据
-for (const i in list) {
+for (i in list) {
   if (i % 2 === 0) {
     waterfallData.line1.push(list[i]);
   } else waterfallData.line2.push(list[i]);

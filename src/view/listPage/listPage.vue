@@ -2,23 +2,23 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 15:21:43
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-22 14:51:51
+ * @LastEditTime: 2022-09-23 10:15:17
  * @FilePath: \CookBooks\src\view\listPage\listPage.vue
  * @Description: 
 -->
 <template>
   <div id="listPage">
-    <van-nav-bar :title="PGAETYPE[$route.query.type]" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+    <van-nav-bar :title="title" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
       <template #right>
         <van-icon name="search" size="18" />
       </template>
     </van-nav-bar>
     <div class="allSearchContent">
       <div class="searchContent">
-        <search-cookbook v-for="(item, i) in waterfallData.line1" :item="{ ...item }" :key="i" />
+        <search-cookbook v-for="(item, i) in waterfallData.line1" :item="item" :key="i" />
       </div>
       <div class="searchContent">
-        <search-cookbook v-for="(item, i) in waterfallData.line2" :item="{ ...item }" :key="i" />
+        <search-cookbook v-for="(item, i) in waterfallData.line2" :item="item" :key="i" />
       </div>
     </div>
   </div>
@@ -29,19 +29,28 @@ import { useRoute, useRouter } from 'vue-router';
 import searchCookBook from '@/components/searchCookBook.vue';
 
 // 类型枚举
-enum PGAETYPE {
-  '查看全部',
-  '今日推荐',
-  '新手不翻车',
+enum PageType {
+  One = '查看全部',
+  Two = '今日推荐',
+  Three = '新手不翻车',
 }
 
 let $route = useRoute();
 let $router = useRouter();
-
-// console.log(PGAETYPE[$route.query.type]);
-
+let tempIndex: string = '' + ($route.query.type as string);
 // @ts-ignore
-let list = $ref([
+let title = $ref('');
+// [$route.query.type];
+title = PageType[tempIndex as keyof typeof PageType];
+
+interface listItem {
+  src: string;
+  cookName: string;
+  labelName: string;
+  itemType: string;
+}
+// @ts-ignore
+let list: listItem[] = $ref([
   {
     src: 'searchitemShort1.png',
     cookName: '麻婆豆腐',
@@ -68,16 +77,24 @@ let list = $ref([
   },
 ]);
 
-let waterfallData = {
+interface WaterFall {
+  line1: listItem[];
+  line2: listItem[];
+}
+
+let waterfallData: WaterFall = {
   line1: [],
   line2: [],
 };
 
 // 处理瀑布流数据
-for (const i in list) {
-  if (i % 2 === 0) {
-    waterfallData.line1.push(list[i]);
-  } else waterfallData.line2.push(list[i]);
+let i: any = '';
+for (i in list) {
+  if (Object.prototype.hasOwnProperty.call(list, i)) {
+    if (i % 2 === 0) {
+      waterfallData.line1.push(list[i]);
+    } else waterfallData.line2.push(list[i]);
+  }
 }
 
 const onClickLeft = () => {

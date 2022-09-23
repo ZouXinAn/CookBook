@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-22 15:10:17
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-22 17:28:11
+ * @LastEditTime: 2022-09-23 09:35:43
  * @FilePath: \CookBooks\src\view\listPage\cookDetail.vue
  * @Description: 
 -->
@@ -60,7 +60,9 @@ import { useRoute, useRouter } from 'vue-router';
 let $route = useRoute();
 let $router = useRouter();
 
+// @ts-ignore
 let isShowShare = $ref(false);
+// @ts-ignore
 let shareOptions = $ref([
   [
     { name: '微信', icon: 'wechat' },
@@ -75,7 +77,7 @@ let shareOptions = $ref([
     { name: '小程序码', icon: 'weapp-qrcode' },
   ],
 ]);
-
+// @ts-ignore
 let perpareList = $ref([
   {
     name: '豆腐',

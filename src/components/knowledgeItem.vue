@@ -2,8 +2,8 @@
  * @Author: zoujiahao
  * @Date: 2022-08-30 11:00:58
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-08-30 17:27:19
- * @FilePath: \CookBook\src\components\knowledgeItem.vue
+ * @LastEditTime: 2022-09-24 09:45:47
+ * @FilePath: \CookBooks\src\components\knowledgeItem.vue
  * @Description: 
 -->
 <template>
@@ -36,6 +36,10 @@ type Item = {
   type: number;
 };
 defineProps<{ item: Item }>();
+</script>
+
+<script lang="ts">
+export default {};
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-22 15:10:17
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-23 09:35:43
+ * @LastEditTime: 2022-09-24 11:00:07
  * @FilePath: \CookBooks\src\view\listPage\cookDetail.vue
  * @Description: 
 -->
@@ -49,14 +49,48 @@
     <div class="splitLineDiv" style="margin-top: 0"></div>
     <div class="cookStepDiv">
       <span class="fontTitle">烹饪步骤</span>
+      <!-- <div class="cookStepItem">
+        <p>
+          <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
+          <span>步骤1</span>
+        </p>
+        <img src="@/assets/image/stepImg2.png" alt="" />
+        <span class="stepDesc">豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出</span>
+      </div>
+      <div class="cookStepItem">
+        <p>
+          <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
+          <span>步骤2</span>
+        </p>
+        <img src="@/assets/image/stepImg3.png" alt="" />
+        <span class="stepDesc">猪肉剁成末，加盐，料酒和生抽简单腌制5分钟</span>
+      </div>
+       -->
+      <div class="cookStepItem" v-for="(item, i) in cookStepItem" :key="i">
+        <p>
+          <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
+          <span>步骤{{ i + 1 }}</span>
+        </p>
+        <img :src="getUrl(item.url)" alt="" />
+        <span class="stepDesc"> {{ item.desc }}</span>
+      </div>
     </div>
-
+    <div class="splitLineDiv" style="margin-top: 0"></div>
+    <div class="tips">
+      <span class="fontTitle">小贴士</span>
+      <p style="margin-top: 0.4rem; line-height: 0.5333rem">烹饪一定要注意安全哦</p>
+      <p>
+        祝您用餐愉快
+        <img src="@/assets/image/smileIconYellow.png" style="height: 0.32rem; width: 0.32rem; margin-left: 0.1067rem" />
+      </p>
+    </div>
     <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useRoute, useRouter } from 'vue-router';
+import { getUrl } from '@/util/common';
 let $route = useRoute();
 let $router = useRouter();
 
@@ -131,13 +165,29 @@ let perpareList = $ref([
     unit: '适量',
   },
 ]);
+// @ts-ignore
+let cookStepItem = $ref([
+  {
+    url: 'stepImg2.png',
+    desc: '豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出',
+  },
+  {
+    url: 'stepImg3.png',
+    desc: '猪肉剁成末，加盐，料酒和生抽简单腌制5分钟',
+  },
+  {
+    url: 'stepImg2.png',
+    desc: '豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出',
+  },
+]);
 
 let cookId = $route.query?.cookId ?? 1000;
-console.log(cookId);
+// console.log(cookId);
 
 const onClickLeft = () => {
   $router.back();
 };
+
 const onClickRight = () => {
   // $router.push('/search');
   isShowShare = true;
@@ -240,6 +290,41 @@ const onClickRight = () => {
   }
   .cookStepDiv {
     padding: 0.4rem 0.5333rem;
+    .cookStepItem {
+      font-size: 0.4rem;
+      color: #242424;
+      margin-top: 0.4rem;
+      > p {
+        margin-bottom: 0.3333rem;
+        display: flex;
+        align-items: center;
+        .stepIcon {
+          width: 0.44rem;
+          height: 0.4667rem;
+          margin-right: 0.1067rem;
+        }
+      }
+      > img {
+        width: 9rem;
+        height: 5.28rem;
+        margin-bottom: 25px;
+      }
+      .stepDesc {
+        font-size: 0.4rem;
+        font-weight: 400;
+        color: #242424;
+      }
+    }
+  }
+  .tips {
+    padding: 0.4rem 0.5333rem;
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 0.4rem;
+      font-weight: 400;
+      color: #242424;
+    }
   }
 }
 </style>

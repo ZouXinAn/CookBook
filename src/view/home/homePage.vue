@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-24 09:40:46
+ * @LastEditTime: 2022-09-26 10:12:34
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -20,7 +20,7 @@
         <span>周一</span>
       </p>
       <div class="searchBar" @click="goSearch">
-        <van-icon name="search" />
+        <img src="@/assets/image/searchIcon.png" alt="" />
         <span style="margin-left: 0.2rem"> 搜索食材食谱 </span>
       </div>
       <span class="tipsSpan"> 对美食的爱，往往是发自内心的，从心出发，美味无处不在 </span>
@@ -149,6 +149,10 @@ const goSearch = () => {
         font-size: 0.52rem;
         color: rgba(255, 255, 255, 1);
       }
+      img {
+        width: 0.44rem;
+        height: 0.44rem;
+      }
     }
     .tipsSpan {
       display: inline-block;
@@ -157,6 +161,8 @@ const goSearch = () => {
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      width: 8.9333rem;
     }
   }
   .hotBook {
@@ -185,14 +191,19 @@ const goSearch = () => {
       background: url('@/assets/image/todayRecommond.png') no-repeat;
       background-size: 100% 100%;
       width: calc(88vw - 0.2667rem);
-      height: 4.2867rem;
-      padding: 1.3333rem 0 0 0.5333rem;
+      // height: 4.2867rem;
+      height: 3.5rem;
+      // height: 2.7867rem;
+      padding: 0.9rem 0 0 0.5333rem;
+      // 670width 374height 1.78
+      // 375width  209height 1.79
       p {
         font-size: 0.64rem;
         font-family: Source Han Sans CN;
         font-weight: bold;
         color: #ffffff;
         margin-bottom: 0.2rem;
+        line-height: 1em;
       }
       .lineDiv {
         width: 3.72rem;

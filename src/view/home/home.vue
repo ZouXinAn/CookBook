@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-01 16:38:48
+ * @LastEditTime: 2022-09-26 15:34:20
  * @FilePath: \CookBooks\src\view\home\home.vue
  * @Description: 
 -->
@@ -44,6 +44,7 @@
 
 <script lang="ts" setup>
 import { ref } from '@vue/runtime-core';
+import { useRoute } from 'vue-router';
 let nowPage = ref('homePage');
 
 const getUrl = (url: string) => {
@@ -54,6 +55,10 @@ const getUrl = (url: string) => {
 const changePage = (v: string): void => {
   nowPage.value = v;
 };
+
+let $route = useRoute();
+nowPage.value = $route.path.replace('/', '') as string;
+console.log($route);
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +66,11 @@ const changePage = (v: string): void => {
   .van-tabbar {
     position: fixed;
     bottom: 0;
+    height: 70px;
+    .van-tabbar-item {
+      padding-top: 10px;
+      justify-content: flex-start;
+    }
   }
 }
 </style>

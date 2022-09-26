@@ -14,12 +14,15 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchCookbook: typeof import('./src/components/searchCookbook.vue')['default']
+    VanCell: typeof import('vant/es')['Cell']
     VanIcon: typeof import('vant/es')['Icon']
+    VanImage: typeof import('vant/es')['Image']
     VanNavBar: typeof import('vant/es')['NavBar']
     VanSearch: typeof import('vant/es')['Search']
     VanShareSheet: typeof import('vant/es')['ShareSheet']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
     VanTag: typeof import('vant/es')['Tag']
+    VanTreeSelect: typeof import('vant/es')['TreeSelect']
   }
 }

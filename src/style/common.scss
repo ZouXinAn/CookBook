@@ -20,3 +20,16 @@
 p {
   margin: 0;
 }
+
+:root {
+  --van-tree-select-item-active-color: #feaa03 !important;
+  --van-sidebar-selected-border-color: #feaa03 !important;
+}
+
+.splitLineDiv {
+  width: 100vw;
+  height: 0.2933rem;
+  background: #efefef;
+  margin: 0.4rem 0;
+  margin-bottom: 0;
+}

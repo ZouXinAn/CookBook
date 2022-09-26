@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 15:21:43
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-23 10:15:17
+ * @LastEditTime: 2022-09-26 10:24:13
  * @FilePath: \CookBooks\src\view\listPage\listPage.vue
  * @Description: 
 -->
@@ -26,6 +26,7 @@
 
 <script lang="ts" setup>
 import { useRoute, useRouter } from 'vue-router';
+// @ts-ignore
 import searchCookBook from '@/components/searchCookBook.vue';
 
 // 类型枚举

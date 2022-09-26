@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-23 11:27:26
+ * @LastEditTime: 2022-09-26 15:23:11
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -48,7 +48,7 @@
         <div>豆角</div>
       </div>
     </div>
-    <!-- TODO瀑布流 -->
+    <!-- DO瀑布流 -->
     <div v-show="!isShowItem" class="allSearchContent">
       <div class="searchContent">
         <search-cookbook v-for="(item, i) in waterfallData.line1" :item="item" :key="i" />
@@ -65,8 +65,8 @@
 <script lang="ts" setup>
 import { WaterFall } from '@/util/commonType';
 import { computed, onMounted, ref } from '@vue/runtime-core';
-import { useRouter } from 'vue-router';
-import searchCookBook from '@/components/searchCookBook.vue';
+import { useRoute, useRouter } from 'vue-router';
+// import searchCookBook from '@/components/searchCookBook.vue';
 const searchValue = ref('');
 // @ts-ignore
 let list = $ref([
@@ -172,6 +172,10 @@ const getBack = () => {
   $router.back();
   // $router.go(-1);
 };
+const $route = useRoute();
+if ($route.query.value) {
+  searchValue.value = $route.query.value as string;
+}
 </script>
 
 <style lang="scss" scoped>

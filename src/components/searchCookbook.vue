@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 15:22:21
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-24 09:49:24
+ * @LastEditTime: 2022-09-26 15:04:19
  * @FilePath: \CookBooks\src\components\searchCookbook.vue
  * @Description: 
 -->
@@ -36,6 +36,10 @@ const goDetail = () => {
  *
  * 122112
  */
+</script>
+
+<script lang="ts">
+export default {};
 </script>
 
 <style lang="scss" scoped>

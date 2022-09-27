@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 13:58:00
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 17:21:04
+ * @LastEditTime: 2022-09-27 09:34:00
  * @FilePath: \CookBooks\src\view\home\my.vue
  * @Description: 
 -->
@@ -82,6 +82,7 @@
         font-family: Source Han Sans CN;
         font-weight: 400;
         color: #242424;
+        word-break: keep-all;
       }
     }
   }

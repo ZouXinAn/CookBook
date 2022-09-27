@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 14:53:10
+ * @LastEditTime: 2022-09-27 09:33:14
  * @FilePath: \CookBooks\src\view\home\sort.vue
  * @Description: 
 -->
@@ -89,6 +89,7 @@ getTreeData(0);
   }
   .treeSelect {
     height: calc(100vh - 1.1333rem - 100px);
+
     :deep(.van-tree-select__content) {
       flex: 2.7;
     }
@@ -98,6 +99,9 @@ getTreeData(0);
       font-size: 0.4267rem;
       font-family: Source Han Sans CN;
       color: #a5a5a5;
+      .van-sidebar-item__text {
+        word-break: keep-all;
+      }
     }
     :deep(.van-sidebar-item--select) {
       color: #242424;

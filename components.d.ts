@@ -16,7 +16,6 @@ declare module '@vue/runtime-core' {
     SearchCookbook: typeof import('./src/components/searchCookbook.vue')['default']
     VanCell: typeof import('vant/es')['Cell']
     VanIcon: typeof import('vant/es')['Icon']
-    VanImage: typeof import('vant/es')['Image']
     VanNavBar: typeof import('vant/es')['NavBar']
     VanSearch: typeof import('vant/es')['Search']
     VanShareSheet: typeof import('vant/es')['ShareSheet']

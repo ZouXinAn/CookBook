@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 15:34:20
+ * @LastEditTime: 2022-09-27 17:06:39
  * @FilePath: \CookBooks\src\view\home\home.vue
  * @Description: 
 -->
@@ -63,6 +63,10 @@ console.log($route);
 
 <style lang="scss" scoped>
 #home {
+  > div:nth-child(1) {
+    height: calc(100vh - 70px);
+    overflow: hidden scroll;
+  }
   .van-tabbar {
     position: fixed;
     bottom: 0;

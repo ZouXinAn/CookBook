@@ -2,40 +2,50 @@
  * @Author: zoujiahao
  * @Date: 2022-08-30 11:00:58
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-24 09:45:47
+ * @LastEditTime: 2022-09-28 17:07:17
  * @FilePath: \CookBooks\src\components\knowledgeItem.vue
  * @Description: 
 -->
 <template>
   <div id="knowledgeItem">
     <!-- 1大图模式  2图内文模式  3左文右图模式 -->
-    <div class="bigPhoto" v-if="item.type === 1">
-      <p>牛奶和香蕉一起吃可以减肥吗？香蕉牛奶汁可以减肥吗？</p>
-      <img src="@/assets/image/knowB1.png " alt="" />
+    <div class="bigPhoto" v-if="item.type === 1" @click="goToDetail('')">
+      <p>{{ item.title }}</p>
+      <img :src="getUrl(item.url)" alt="" />
     </div>
     <div class="photoInnerText" v-else-if="item.type === 2">
-      <div>
-        <img src="@/assets/image/knowI1.png " alt="" />
-        <p>花雕酒怎么喝味道 才好的正确饮用...</p>
+      <div @click="goToDetail('l')">
+        <img :src="getUrl(item.url[0])" alt="" />
+        <p>{{ item.title[0] }}</p>
       </div>
-      <div>
-        <img src="@/assets/image/knowI2.png " alt="" />
-        <p>生榨胡萝卜汁可以 喝吗鲜榨胡萝汁...</p>
+      <div @click="goToDetail('r')">
+        <img :src="getUrl(item.url[1])" alt="" />
+        <p>{{ item.title[1] }}</p>
       </div>
     </div>
-    <div class="photoSplitText" v-else>
-      <p>番茄茄红素吸收率提 升50%的4大绝招让 你吃出惊人美肌力</p>
-      <img src="@/assets/image/knowS1.png " alt="" />
+    <div class="photoSplitText" v-else @click="goToDetail('')">
+      <p>{{ item.title }}</p>
+      <img :src="getUrl(item.url)" alt="" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { getUrl } from '@/util/common';
+import { onBeforeRouteLeave, useRouter } from 'vue-router';
+const $router = useRouter();
 // type :1大图模式  2图内文模式  3左文右图模式
 type Item = {
   type: number;
+  title: string | string[];
+  url: string | string[];
+  id: number;
 };
-defineProps<{ item: Item }>();
+const $prop = defineProps<{ item: Item }>();
+
+const goToDetail = (str: string) => {
+  $router.push({ path: '/moreKnowledge', query: { id: `${$prop.item.type}-${$prop.item.id}${str ? '-' + str : ''}` } });
+};
 </script>
 
 <script lang="ts">

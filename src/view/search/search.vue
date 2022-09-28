@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 15:23:11
+ * @LastEditTime: 2022-09-28 13:25:57
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -57,6 +57,7 @@
         <search-cookbook v-for="(item, i) in waterfallData.line2" :item="item" :key="i" />
       </div>
     </div>
+    <div v-show="!isShowItem" style="height: 0.1333rem; width: 100vw">a</div>
   </div>
 
   <!-- <router-view /> -->
@@ -180,6 +181,7 @@ if ($route.query.value) {
 
 <style lang="scss" scoped>
 #search {
+  height: 100%;
   > div {
     padding: 0 0.36rem;
   }
@@ -205,7 +207,7 @@ if ($route.query.value) {
     }
   }
   .allSearchContent {
-    height: calc(99vh - 45px);
+    height: calc(100% - 54px);
     // background: #f2f3f5;
     overflow-x: hidden;
     overflow-y: auto;
@@ -217,6 +219,7 @@ if ($route.query.value) {
       padding-top: 0.32rem;
       display: flex;
       flex-direction: column;
+      height: fit-content;
     }
   }
 

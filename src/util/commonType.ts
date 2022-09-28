@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-23 11:14:01
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-23 11:18:03
+ * @LastEditTime: 2022-09-28 16:00:52
  * @FilePath: \CookBooks\src\util\commonType.ts
  * @Description: 
  */
@@ -20,4 +20,11 @@ export interface WaterFall {
 }
 
 
+export interface knowItemType {
+  id: number | string;
+  title: string;
+  time: string;
+  source: string;
+  contentList: [];
+}
 

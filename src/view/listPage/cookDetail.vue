@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-22 15:10:17
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 17:06:55
+ * @LastEditTime: 2022-09-28 13:28:26
  * @FilePath: \CookBooks\src\view\listPage\cookDetail.vue
  * @Description: 
 -->
@@ -197,6 +197,8 @@ const onClickRight = () => {
 <style lang="scss" scoped>
 @import '@/style/common.scss';
 #cookDetail {
+  overflow: hidden scroll;
+  height: 100%;
   color: #242424;
   .fontTitle {
     font-size: 0.48rem;

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 10:12:34
+ * @LastEditTime: 2022-09-28 17:20:31
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -64,19 +64,8 @@
     <div class="moreKnowledge">
       <span class="bigTitle"> 涨知识 </span>
       <div class="knowledgeContent">
-        <knowledge-item :class="{ ishaveSplit: true }" :item="{ type: 1 }" />
-        <knowledge-item :class="{ ishaveSplit: true }" :item="{ type: 2 }" />
-        <knowledge-item :class="{ ishaveSplit: true }" :item="{ type: 3 }" />
-        <knowledge-item :class="{ ishaveSplit: true }" :item="{ type: 1 }" />
-        <knowledge-item :class="{ ishaveSplit: true }" :item="{ type: 3 }" />
-        <knowledge-item :class="{ ishaveSplit: false }" :item="{ type: 2 }" />
-        <!-- <knowledge-item :type="2"></knowledge-item>
-        <knowledge-item :type="3"></knowledge-item> -->
+        <knowledge-item v-for="(item, i) in konwledgeList" :key="i" :class="{ ishaveSplit: i + 1 !== konwledgeList.length ? true : '' }" :item="item" />
       </div>
-      <!-- <div class="loadingNow">
-        <img src="@/assets/image/loadingIcon.png " alt="" />
-        <span>努力加载中..... </span>
-      </div> -->
       <loading-more />
     </div>
   </div>
@@ -87,6 +76,17 @@ import normalCookBook from '@/components/normalCookBook.vue';
 import knowledgeItem from '@/components/knowledgeItem.vue';
 import { useRouter } from 'vue-router';
 import LoadingMore from '@/components/LoadingMore.vue';
+import { nextTick } from '@vue/runtime-core';
+import { ref } from 'vue';
+import { setScorll } from '@/util/common';
+
+setScorll();
+
+// setScorll(document.querySelector('#homePage'));
+// setTimeout(() => {
+//   console.log(document.querySelector('#home > div:nth-child(1)'));
+//   console.log(document.querySelector('#home > div:nth-child(1)')?.scrollTop);
+// }, 1000);
 
 const $router = useRouter();
 
@@ -101,6 +101,45 @@ const checkMore = (type: string) => {
 const goSearch = () => {
   $router.push('/search');
 };
+
+const konwledgeList = ref([
+  {
+    type: 1,
+    id: 101,
+    url: 'knowledge/knowB1.png',
+    title: '牛奶和香蕉一起吃可以减肥吗？香蕉牛奶 汁可以减肥吗？',
+  },
+  {
+    type: 2,
+    id: 102,
+    url: ['knowledge/knowI1.png', 'knowledge/knowI2.png'],
+    title: ['花雕酒怎么喝味道 才好的正确饮用...', '生榨胡萝卜汁 可以喝吗鲜榨胡萝汁...'],
+  },
+  {
+    type: 3,
+    id: 103,
+    url: 'knowledge/knowS1.png',
+    title: '番茄茄红素吸收率提升50%的4大绝招让你吃出惊人美肌力',
+  },
+  {
+    type: 1,
+    id: 104,
+    url: 'knowledge/knowB2.png',
+    title: '秋季吃藕有哪些好处？为何说秋天吃藕比较好',
+  },
+  {
+    type: 3,
+    id: 105,
+    url: 'knowledge/knowS2.png',
+    title: '哺乳妈妈必知的黄金 高品质母乳的6大关 键营养素',
+  },
+  {
+    type: 2,
+    id: 106,
+    url: ['knowledge/knowI3.png', 'knowledge/knowI4.png'],
+    title: ['男人吃香菜好吗 男人香菜吃多了... ', '西蓝花焯水几分钟 能熟西蓝花焯水... '],
+  },
+]);
 </script>
 
 <style lang="scss" scoped>
@@ -109,7 +148,7 @@ const goSearch = () => {
   > div {
     padding: 0 0.5333rem 0;
   }
-  padding-bottom: 60px;
+  padding-bottom: 70px;
   #homeTop {
     background: url('@/assets/image/homeTitleBcg.png') no-repeat;
     background-size: 100% 100%;

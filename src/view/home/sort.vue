@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-27 09:33:14
+ * @LastEditTime: 2022-09-28 10:08:05
  * @FilePath: \CookBooks\src\view\home\sort.vue
  * @Description: 
 -->
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="treeSelect">
-      <van-tree-select v-model:main-active-index="activeIndex" height="calc(100vh - 1.1333rem - 100px)" :items="sortTree" @click-nav="getTreeData">
+      <van-tree-select v-model:main-active-index="activeIndex" height="100%" :items="sortTree" @click-nav="getTreeData">
         <template #content>
           <div class="selectItem" v-for="(item, i) in treeSelectList" :key="i">
             <span class="itemTitle">{{ item.title }}</span>
@@ -68,15 +68,18 @@ getTreeData(0);
     width: 100vw;
     background: #ffffff;
     margin-bottom: 0.2933rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .searchBar {
       width: 7.3733rem;
       height: 0.8667rem;
       background: #f2f3f5;
       border-radius: 0.1333rem;
-      margin: 0.1333rem auto;
       display: flex;
       align-items: center;
       padding-left: 0.1867rem;
+      margin-top: 0;
       img {
         height: 0.3867rem;
         width: 0.3867rem;
@@ -88,7 +91,7 @@ getTreeData(0);
     }
   }
   .treeSelect {
-    height: calc(100vh - 1.1333rem - 100px);
+    height: calc(100% - 1.1333rem - 0.2933rem);
 
     :deep(.van-tree-select__content) {
       flex: 2.7;

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-26 14:25:58
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 16:32:43
+ * @LastEditTime: 2022-09-30 22:36:42
  * @FilePath: \CookBooks\src\util\defaultData.ts
  * @Description: 
  */
@@ -61,6 +61,16 @@ export const treeSelectData = [
     title: '调理',
     typeId: 3,
     child: [{ name: '补虚' }, { name: '除胃热' }, { name: '猪耳' }, { name: '利五脏' }, { name: '消水肿' }, { name: '益气' }, { name: '治血脉' }],
+  },
+   {
+    title: '南方',
+    typeId: 4,
+    child: [{ name: '米面' }, { name: '馒头' }, { name: '包子' }, { name: '番薯' }, { name: '玉米' }, { name: '小麦' }, { name: '大米' }],
+  },
+  {
+    title: '北方',
+    typeId: 4,
+    child: [{ name: '米粉' }, { name: '肠粉' }, { name: '河粉' }, { name: '米线' }, { name: '灌汤包' }, { name: '饺子' }, { name: '馄饨' }, { name: '煎饼' }],
   },
 ]
 
@@ -749,7 +759,6 @@ export class FamousData {
     return this.data.find(item=>item.id===id)
   }
 }
-
 
 
 export class CookDetail{

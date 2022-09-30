@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 13:31:28
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 16:19:23
+ * @LastEditTime: 2022-09-30 22:27:24
  * @FilePath: \CookBooks\src\view\moreKnowledge\moreKnowledge.vue
  * @Description: 
 -->
@@ -10,9 +10,12 @@
   <!-- <span>home</span>
   <p>homeee</p> -->
   <div id="moreKnowledge">
-    <van-nav-bar class="navBar" title="涨知识" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+    <van-nav-bar class="navBar" title="涨知识" @click-left="onClickLeft" @click-right="onClickRight">
+      <template #left>
+        <img src="@/assets/image/leftArrow.png" style="height: 0.3867rem; width: 0.2267rem" alt="" />
+      </template>
       <template #right>
-        <van-icon name="share-o" size="18" />
+        <img src="@/assets/image/shareIconGray.png" style="height: 0.3867rem; width: 0.3867rem" alt="" />
       </template>
     </van-nav-bar>
     <div v-if="isHaveData" class="knowledgeItem">
@@ -28,6 +31,12 @@
       </div>
     </div>
     <div v-else>暂无数据!</div>
+
+    <div class="starDiv" @click="starEvent">
+      <img v-if="isStar" src="@/assets/image/knowIconFill.png" alt="" />
+      <img v-else src="@/assets/image/knowIconNoContent.png" alt="" />
+      <span>知识</span>
+    </div>
     <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
   </div>
 </template>
@@ -64,6 +73,9 @@ let shareOptions = reactive([
   ],
 ]);
 
+let isStar = ref<boolean>(false);
+let queryId: string = $route.query.id as string;
+
 const onClickLeft = () => {
   $router.back();
 };
@@ -73,9 +85,8 @@ const onClickRight = () => {
 };
 
 const getItem = () => {
-  let id: number | string = $route.query.id as string;
   console.log($route.query.id as string);
-  knowItem.value = knowItemData.find((item) => item.id == id) as knowItemType;
+  knowItem.value = knowItemData.find((item) => item.id == queryId) as knowItemType;
   // console.log(knowItem.value);
   // Object.prototype.hasOwnProperty.call(knowItem.value, 'id')
   if (knowItem.value) {
@@ -83,6 +94,42 @@ const getItem = () => {
   } else isHaveData.value = false;
 };
 getItem();
+
+const starEvent = () => {
+  isStar.value = !isStar.value;
+  let local = localStorage.getItem('starList');
+  // 添加状态
+  if (isStar.value) {
+    if (local) {
+      if (local.indexOf(queryId) === -1) {
+        localStorage.setItem('starList', local + ',' + queryId);
+      }
+    } else {
+      localStorage.setItem('starList', queryId);
+    }
+  } else {
+    // 删除状态
+    if (local?.indexOf(queryId) !== -1) {
+      let id = queryId;
+      console.log(local?.indexOf(queryId));
+      if (local?.indexOf(queryId) !== 0) {
+        id = ',' + id;
+      }
+      console.log(id);
+      let temp = local?.replace(id, '');
+      localStorage.setItem('starList', String(temp));
+    }
+  }
+};
+
+const checkStar = () => {
+  if (localStorage.getItem('starList')?.indexOf(queryId) !== -1) {
+    isStar.value = true;
+  } else {
+    isStar.value = false;
+  }
+};
+checkStar();
 </script>
 
 <style lang="scss" scoped>
@@ -125,6 +172,26 @@ getItem();
   :deep(.van-nav-bar__content) {
     .van-icon {
       color: #989898;
+    }
+  }
+  .starDiv {
+    position: fixed;
+    width: 2.5067rem;
+    height: 1.04rem;
+    background: #fef2df;
+    top: 50%;
+    right: 0px;
+    border-radius: 39px 0 0 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #feaa03;
+    img {
+      height: 0.56rem;
+      width: 0.6133rem;
+      margin-right: 0.2rem;
     }
   }
 }

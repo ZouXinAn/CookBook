@@ -2,15 +2,19 @@
  * @Author: zoujiahao
  * @Date: 2022-09-22 15:10:17
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 16:39:35
+ * @LastEditTime: 2022-09-30 22:30:53
  * @FilePath: \CookBooks\src\view\listPage\cookDetail.vue
  * @Description: 
 -->
 <template>
   <div id="cookDetail">
     <van-nav-bar class="navBar" title="大显身手献厨艺，艺展天下无人敌" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+      <template #left>
+        <img src="@/assets/image/leftArrowWhite.png" style="height: 0.3867rem; width: 0.2267rem" alt="" />
+      </template>
       <template #right>
-        <van-icon name="share-o" size="18" />
+        <!-- <van-icon name="share-o" size="18" /> -->
+        <img src="@/assets/image/shareIcon.png" style="height: 0.3867rem; width: 0.3867rem" alt="" />
       </template>
     </van-nav-bar>
     <img class="bigPhoto" :src="getUrl(cookDetailItem.bigUrl)" alt="" />
@@ -37,7 +41,6 @@
     </div>
     <!-- 分割线 -->
     <div class="splitLineDiv"></div>
-
     <!-- 准备 -->
     <div class="perpareDiv">
       <span class="fontTitle">需要食材</span>
@@ -60,6 +63,11 @@
     </div>
     <div class="splitLineDiv" style="margin-top: 0"></div>
     <tips />
+    <div class="starDiv" @click="starEvent">
+      <img v-if="isStar" src="@/assets/image/starIconFill.png" alt="" />
+      <img v-else src="@/assets/image/starIconNoContent.png" alt="" />
+      <span>收藏</span>
+    </div>
     <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
   </div>
 </template>
@@ -69,6 +77,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { getUrl } from '@/util/common';
 import tips from '@/components/tips.vue';
 import { CookDetail } from '@/util/defaultData';
+import { ref } from '@vue/runtime-core';
 
 let $route = useRoute();
 let $router = useRouter();
@@ -93,6 +102,8 @@ let shareOptions = $ref([
 // @ts-ignore
 let cookDetailItem = $ref({});
 
+let isStar = ref<boolean>(false);
+
 let cookId = $route.query?.cookId ?? 101;
 
 if ($route.query.cookId) {
@@ -109,6 +120,43 @@ const onClickLeft = () => {
 const onClickRight = () => {
   isShowShare = true;
 };
+
+const starEvent = () => {
+  isStar.value = !isStar.value;
+  let local = localStorage.getItem('starList');
+  // 添加状态
+  if (isStar.value) {
+    if (local) {
+      if (local.indexOf(cookDetailItem.id) === -1) {
+        localStorage.setItem('starList', local + ',' + cookDetailItem.id);
+      }
+    } else {
+      localStorage.setItem('starList', cookDetailItem.id);
+    }
+  } else {
+    // 删除状态
+    if (local?.indexOf(cookDetailItem.id) !== -1) {
+      let id = cookDetailItem.id;
+      console.log(local?.indexOf(cookDetailItem.id));
+      if (local?.indexOf(cookDetailItem.id) !== 0) {
+        id = ',' + id;
+      }
+      console.log(id);
+      let temp = local?.replace(id, '');
+      localStorage.setItem('starList', String(temp));
+    }
+  }
+};
+
+const checkStar = () => {
+  if (localStorage.getItem('starList')?.indexOf(cookDetailItem.id) !== -1) {
+    isStar.value = true;
+  } else {
+    isStar.value = false;
+  }
+};
+
+checkStar();
 </script>
 
 <style lang="scss" scoped>
@@ -117,6 +165,7 @@ const onClickRight = () => {
   overflow: hidden scroll;
   height: 100%;
   color: #242424;
+  position: relative;
   .fontTitle {
     font-size: 0.48rem;
     font-weight: 600;
@@ -229,6 +278,27 @@ const onClickRight = () => {
         font-weight: 400;
         color: #242424;
       }
+    }
+  }
+
+  .starDiv {
+    position: fixed;
+    width: 2.5067rem;
+    height: 1.04rem;
+    background: #fef2df;
+    top: 50%;
+    right: 0px;
+    border-radius: 39px 0 0 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #feaa03;
+    img {
+      height: 0.4667rem;
+      width: 0.4667rem;
+      margin-right: 0.2rem;
     }
   }
 }

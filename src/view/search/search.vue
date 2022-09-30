@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 17:24:19
+ * @LastEditTime: 2022-09-30 22:31:57
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -12,7 +12,8 @@
   <!-- <span>search</span> -->
   <div id="search" :style="{ background: !isShowItem ? '#f2f3f5' : 'white' }">
     <div class="searchTop">
-      <van-icon name="arrow-left" @click="getBack" />
+      <!-- <van-icon name="arrow-left" @click="getBack" /> -->
+      <img src="@/assets/image/leftArrow.png" style="height: 0.3867rem; width: 0.2267rem" alt="" @click="getBack" />
 
       <!-- <img src="@/assets/image/searchIconGray.png" alt="" /> -->
       <van-search v-model="searchValue" placeholder="搜索食材、菜谱" @change="searchAdd">

@@ -2,15 +2,19 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 15:21:43
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 15:16:50
+ * @LastEditTime: 2022-09-30 22:28:47
  * @FilePath: \CookBooks\src\view\listPage\listPage.vue
  * @Description: 
 -->
 <template>
   <div id="listPage">
     <van-nav-bar :title="title" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+      <template #left>
+        <img src="@/assets/image/leftArrow.png" style="height: 0.3867rem; width: 0.2267rem" alt="" />
+      </template>
       <template #right>
-        <van-icon name="search" size="18" />
+        <!-- <van-icon name="search" size="18" /> -->
+        <img src="@/assets/image/searchIconGray.png" style="height: 0.3867rem; width: 0.3867rem" alt="" />
       </template>
     </van-nav-bar>
     <div class="allSearchContent">

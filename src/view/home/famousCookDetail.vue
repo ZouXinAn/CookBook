@@ -2,15 +2,19 @@
  * @Author: zoujiahao
  * @Date: 2022-09-29 11:25:25
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 16:36:33
+ * @LastEditTime: 2022-09-30 22:48:55
  * @FilePath: \CookBooks\src\view\home\famousCookDetail.vue
  * @Description: 
 -->
 <template>
   <div id="famousCookDetail">
     <van-nav-bar :title="famousItemData.title" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+      <template #left>
+        <img src="@/assets/image/leftArrow.png" style="height: 0.3867rem; width: 0.2267rem" alt="" />
+      </template>
       <template #right>
-        <van-icon name="share-o" size="18" />
+        <!-- <van-icon name="share-o" size="18" /> -->
+        <img src="@/assets/image/shareIconGray.png" style="height: 0.3867rem; width: 0.3867rem" alt="" />
       </template>
     </van-nav-bar>
     <div class="videoItem">
@@ -58,7 +62,7 @@
     <div class="splitLineDiv"></div>
     <div class="cookStep">
       <span class="fontTitle"
-        >烹饪步骤 (<span style="font-size: 0.32rem">共{{ famousItemData.cookStep.length }}步</span>)</span
+        >烹饪步骤 <span style="font-size: 0.32rem">（共{{ famousItemData.cookStep.length }}步）</span></span
       >
       <div v-for="(item, i) in famousItemData.cookStep" :key="i">
         <p>
@@ -70,6 +74,11 @@
     </div>
     <div class="splitLineDiv"></div>
     <tips />
+    <div class="starDiv" @click="starEvent">
+      <img v-if="isStar" src="@/assets/image/starIconFill.png" alt="" />
+      <img v-else src="@/assets/image/starIconNoContent.png" alt="" />
+      <span>收藏</span>
+    </div>
   </div>
   <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
 </template>
@@ -87,6 +96,8 @@ let $router = useRouter();
 let isShowControl = ref<boolean>(false);
 // @ts-ignore
 let isShowShare = $ref(false);
+let isStar = ref<boolean>(false);
+
 // @ts-ignore
 let shareOptions = $ref([
   [
@@ -102,7 +113,8 @@ let shareOptions = $ref([
     { name: '小程序码', icon: 'weapp-qrcode' },
   ],
 ]);
-
+// @ts-ignore
+let tempId = $ref('');
 // @ts-ignore
 const { proxy } = getCurrentInstance();
 // @ts-ignore
@@ -134,6 +146,7 @@ if ($route.query.id) {
   let famous = new FamousData();
   let id = Number($route.query.id);
   famousItemData.value = famous.getDataById(id);
+  tempId = String(famousItemData.value.id);
   console.log($route.query.id, famousItemData);
 
   // perpareList = famousItemData.value.paperList;
@@ -176,12 +189,50 @@ const getChefColor = (tag: number) => {
       break;
   }
 };
+
+const starEvent = () => {
+  isStar.value = !isStar.value;
+  let local = localStorage.getItem('starList');
+  // 添加状态
+  if (isStar.value) {
+    if (local) {
+      if (local.indexOf(tempId) === -1) {
+        localStorage.setItem('starList', local + ',' + tempId);
+      }
+    } else {
+      localStorage.setItem('starList', tempId);
+    }
+  } else {
+    // 删除状态
+    if (local?.indexOf(tempId) !== -1) {
+      let id = tempId;
+      console.log(local?.indexOf(tempId));
+      if (local?.indexOf(tempId) !== 0) {
+        id = ',' + id;
+      }
+      console.log(id);
+      let temp = local?.replace(id, '');
+      localStorage.setItem('starList', String(temp));
+    }
+  }
+};
+
+const checkStar = () => {
+  if (localStorage.getItem('starList')?.indexOf(tempId) !== -1) {
+    isStar.value = true;
+  } else {
+    isStar.value = false;
+  }
+};
+
+checkStar();
 </script>
 
 <style lang="scss" scoped>
 #famousCookDetail {
   overflow: hidden scroll;
   height: 100%;
+  position: relative;
   .fontTitle {
     font-size: 0.48rem;
     font-weight: 600;
@@ -328,6 +379,26 @@ const getChefColor = (tag: number) => {
         display: flex;
         align-items: center;
       }
+    }
+  }
+  .starDiv {
+    position: fixed;
+    width: 2.5067rem;
+    height: 1.04rem;
+    background: #fef2df;
+    top: 50%;
+    right: 0px;
+    border-radius: 39px 0 0 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #feaa03;
+    img {
+      height: 0.4667rem;
+      width: 0.4667rem;
+      margin-right: 0.2rem;
     }
   }
 }

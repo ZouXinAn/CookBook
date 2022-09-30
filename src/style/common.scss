@@ -41,3 +41,10 @@ p {
   overflow: hidden scroll;
   position: relative;
 }
+
+#search {
+  :deep(.van-icon-arrow-left) {
+    font-size: 18px;
+    color: #9e9e9e;
+  }
+}

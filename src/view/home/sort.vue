@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 17:06:49
+ * @LastEditTime: 2022-09-30 22:14:16
  * @FilePath: \CookBooks\src\view\home\sort.vue
  * @Description: 
 -->
@@ -41,6 +41,7 @@ const sortTree = $ref([
   { text: '菜系菜品', id: 1 },
   { text: '时令食材', id: 2 },
   { text: '功效', id: 3 },
+  { text: '主食', id: 4 },
 ]);
 const goSearch = () => {
   $router.push('/search');

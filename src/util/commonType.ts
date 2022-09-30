@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-23 11:14:01
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 16:20:09
+ * @LastEditTime: 2022-09-30 22:05:53
  * @FilePath: \CookBooks\src\util\commonType.ts
  * @Description: 
  */

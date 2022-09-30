@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 16:41:27
+ * @LastEditTime: 2022-09-30 22:13:34
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -67,7 +67,7 @@
         <knowledge-item v-for="(item, i) in konwledgeList" :key="i" :class="{ ishaveSplit: i + 1 !== konwledgeList.length ? true : '' }" :item="item" />
       </div>
       <loading-more v-if="isHaveData" />
-      <p v-else style="text-align: center; margin: 0.2667rem 0; color: rgba(159, 159, 159, 1)">别拉啦，没有数据了！</p>
+      <p v-else style="text-align: center; margin: 0.2667rem 0; color: rgba(159, 159, 159, 1)">已经到底啦！</p>
     </div>
   </div>
 </template>
@@ -115,13 +115,13 @@ let konwledgeList = ref([
     type: 1,
     id: 101,
     url: 'knowledge/knowB1.png',
-    title: '牛奶和香蕉一起吃可以减肥吗？香蕉牛奶 汁可以减肥吗？',
+    title: '牛奶和香蕉一起吃可以减肥吗？香蕉牛奶汁可以减肥吗？',
   },
   {
     type: 2,
     id: 102,
     url: ['knowledge/knowI1.png', 'knowledge/knowI2.png'],
-    title: ['花雕酒怎么喝味道 才好的正确饮用...', '生榨胡萝卜汁 可以喝吗鲜榨胡萝汁...'],
+    title: ['花雕酒怎么喝味道才好的正确饮用...', '生榨胡萝卜汁可以喝吗鲜榨胡萝汁...'],
   },
   {
     type: 3,

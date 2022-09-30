@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 17:11:32
+ * @LastEditTime: 2022-09-30 22:58:02
  * @FilePath: \CookBooks\src\view\home\famousCook.vue
  * @Description: 
 -->
@@ -90,8 +90,8 @@ let famousList = reactive({
     list: [
       { parentType: 1, id: 311, url: 'famous1.png', title: '奶油香煎龙虾|浓郁的上层奶油与澳洲龙虾', seeNo: '12.4W', starNo: '18657' },
       { parentType: 1, id: 312, url: 'famous2.png', title: '养生牛油果冰淇淋', seeNo: '18.3w', starNo: '10005' },
-      { parentType: 1, id: 314, url: 'famous10.jpg', title: '芝士芒果慕斯', seeNo: '10.8W', starNo: '12534' },
-      { parentType: 1, id: 313, url: 'famous3.png', title: '鲜虾烧麦', seeNo: '11.5W', starNo: '13264' },
+      // { parentType: 1, id: 314, url: 'famous10.jpg', title: '芝士芒果慕斯', seeNo: '10.8W', starNo: '12534' },
+      { parentType: 1, id: 311, url: 'famous3.png', title: '鲜虾烧麦', seeNo: '11.5W', starNo: '13264' },
     ],
   },
   beautify: {

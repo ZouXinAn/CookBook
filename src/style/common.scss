@@ -33,3 +33,11 @@ p {
   margin: 0.4rem 0;
   margin-bottom: 0;
 }
+
+#sortDiv,
+#homePage,
+#myDiv {
+  height: calc(100% - 70px);
+  overflow: hidden scroll;
+  position: relative;
+}

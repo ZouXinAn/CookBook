@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-22 15:10:17
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 13:28:26
+ * @LastEditTime: 2022-09-30 16:39:35
  * @FilePath: \CookBooks\src\view\listPage\cookDetail.vue
  * @Description: 
 -->
@@ -13,26 +13,26 @@
         <van-icon name="share-o" size="18" />
       </template>
     </van-nav-bar>
-    <img class="bigPhoto" src="@/assets/image/cookDetailBigImg.png" alt="" />
+    <img class="bigPhoto" :src="getUrl(cookDetailItem.bigUrl)" alt="" />
     <!-- 基础信息区域 -->
     <div class="cookInfo">
-      <h2>麻婆豆腐</h2>
+      <h2>{{ cookDetailItem.title }}</h2>
       <div class="overviewDiv">
         <div>
           <img src="@/assets/image/eyeIcon.png" style="height: 0.28rem; width: 0.4267rem" />
-          <span> 20.4W </span>
+          <span> {{ cookDetailItem.seeNo }} </span>
         </div>
         <div style="margin-left: 0.6667rem">
           <img src="@/assets/image/smileIcon.png" style="height: 0.32rem; width: 0.32rem" />
-          <span> 18256 </span>
+          <span> {{ cookDetailItem.starNo }} </span>
         </div>
       </div>
       <div>
         <img src="@/assets/image/splitLine.png" style="width: 1.2rem; height: 0.0933rem" alt="" />
       </div>
-      <span class="authorSpan"> 作者: {{ '小甜心' }} </span>
+      <span class="authorSpan"> 作者: {{ cookDetailItem.author }} </span>
       <div class="cookSimpleInfo">
-        麻婆豆腐的特点是：在细嫩雪白的豆腐上，点缀着棕红色的牛肉酥馅，碧绿色的蒜苗，红红的辣油。视之如玉镶琥珀， 闻之则浓香扑鼻，食之更是集麻、辣、烫、嫩、酥、鲜、香 于一馔，让你越吃越上瘾
+        {{ cookDetailItem.desc }}
       </div>
     </div>
     <!-- 分割线 -->
@@ -41,7 +41,7 @@
     <!-- 准备 -->
     <div class="perpareDiv">
       <span class="fontTitle">需要食材</span>
-      <div v-for="(item, i) in perpareList" :key="i">
+      <div v-for="(item, i) in cookDetailItem.perpareList" :key="i">
         <span>{{ item.name }}</span>
         <span>{{ item.num }}{{ item.unit }}</span>
       </div>
@@ -49,24 +49,7 @@
     <div class="splitLineDiv" style="margin-top: 0"></div>
     <div class="cookStepDiv">
       <span class="fontTitle">烹饪步骤</span>
-      <!-- <div class="cookStepItem">
-        <p>
-          <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
-          <span>步骤1</span>
-        </p>
-        <img src="@/assets/image/stepImg2.png" alt="" />
-        <span class="stepDesc">豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出</span>
-      </div>
-      <div class="cookStepItem">
-        <p>
-          <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
-          <span>步骤2</span>
-        </p>
-        <img src="@/assets/image/stepImg3.png" alt="" />
-        <span class="stepDesc">猪肉剁成末，加盐，料酒和生抽简单腌制5分钟</span>
-      </div>
-       -->
-      <div class="cookStepItem" v-for="(item, i) in cookStepItem" :key="i">
+      <div class="cookStepItem" v-for="(item, i) in cookDetailItem.cookStep" :key="i">
         <p>
           <img class="stepIcon" src="@/assets/image/stepIcon.png" alt="" />
           <span>步骤{{ i + 1 }}</span>
@@ -85,6 +68,7 @@
 import { useRoute, useRouter } from 'vue-router';
 import { getUrl } from '@/util/common';
 import tips from '@/components/tips.vue';
+import { CookDetail } from '@/util/defaultData';
 
 let $route = useRoute();
 let $router = useRouter();
@@ -107,84 +91,22 @@ let shareOptions = $ref([
   ],
 ]);
 // @ts-ignore
-let perpareList = $ref([
-  {
-    name: '豆腐',
-    num: 1,
-    unit: '盒',
-  },
-  {
-    name: '肉末',
-    num: 150,
-    unit: 'g',
-  },
-  {
-    name: '蒜蓉酱',
-    num: 2,
-    unit: '瓣',
-  },
-  {
-    name: '玉米淀粉',
-    num: 1,
-    unit: '勺',
-  },
-  {
-    name: '蚝油',
-    num: 1,
-    unit: '勺',
-  },
+let cookDetailItem = $ref({});
 
-  {
-    name: '生抽',
-    num: 1,
-    unit: '勺',
-  },
-  {
-    name: '豆瓣酱',
-    num: 1,
-    unit: '大勺',
-  },
-  {
-    name: '姜末',
-    num: 150,
-    unit: 'g',
-  },
-  {
-    name: '花椒粒',
-    num: '',
-    unit: '适量',
-  },
-  {
-    name: '食用油',
-    num: '',
-    unit: '适量',
-  },
-]);
-// @ts-ignore
-let cookStepItem = $ref([
-  {
-    url: 'stepImg2.png',
-    desc: '豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出',
-  },
-  {
-    url: 'stepImg3.png',
-    desc: '猪肉剁成末，加盐，料酒和生抽简单腌制5分钟',
-  },
-  {
-    url: 'stepImg2.png',
-    desc: '豆腐切小块，锅里水开后放一点盐， 放入豆腐焯一分钟，然后捞出',
-  },
-]);
+let cookId = $route.query?.cookId ?? 101;
 
-let cookId = $route.query?.cookId ?? 1000;
-// console.log(cookId);
+if ($route.query.cookId) {
+  let cookDetail = new CookDetail();
+  let id = Number(cookId);
+  cookDetailItem = cookDetail.getDataById(id);
+  // console.log($route.query.cookId, cookDetailItem);
+}
 
 const onClickLeft = () => {
   $router.back();
 };
 
 const onClickRight = () => {
-  // $router.push('/search');
   isShowShare = true;
 };
 </script>
@@ -205,6 +127,7 @@ const onClickRight = () => {
     :deep(.van-nav-bar__title) {
       font-size: 0.4rem;
       color: #ffffff;
+      max-width: 80%;
     }
   }
   :deep(.van-nav-bar) {
@@ -215,6 +138,7 @@ const onClickRight = () => {
   .bigPhoto {
     width: 10rem;
     height: 6.4rem;
+    object-fit: cover;
   }
   .cookInfo {
     display: flex;
@@ -283,7 +207,7 @@ const onClickRight = () => {
     .cookStepItem {
       font-size: 0.4rem;
       color: #242424;
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
       > p {
         margin-bottom: 0.3333rem;
         display: flex;
@@ -297,7 +221,8 @@ const onClickRight = () => {
       > img {
         width: 9rem;
         height: 5.28rem;
-        margin-bottom: 25px;
+        margin-bottom: 0.3333rem;
+        object-fit: cover;
       }
       .stepDesc {
         font-size: 0.4rem;

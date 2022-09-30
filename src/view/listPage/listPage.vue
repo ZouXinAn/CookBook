@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 15:21:43
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 11:03:09
+ * @LastEditTime: 2022-09-30 15:16:50
  * @FilePath: \CookBooks\src\view\listPage\listPage.vue
  * @Description: 
 -->
@@ -28,6 +28,7 @@
 import { useRoute, useRouter } from 'vue-router';
 // @ts-ignore
 import searchCookBook from '@/components/searchCookBook.vue';
+import { CookDetail } from '@/util/defaultData';
 
 // 类型枚举
 enum PageType {
@@ -36,6 +37,7 @@ enum PageType {
   Three = '新手不翻车',
 }
 
+const cookDetail = new CookDetail();
 let $route = useRoute();
 let $router = useRouter();
 let tempIndex: string = '' + ($route.query.type as string);
@@ -45,38 +47,16 @@ let title = $ref('');
 title = PageType[tempIndex as keyof typeof PageType];
 
 interface listItem {
+  url: string;
   src: string;
-  cookName: string;
-  labelName: string;
-  itemType: string;
+  title: string;
+  cookType: string;
+  photoType: string;
+  [proeName: string]: any;
 }
+
 // @ts-ignore
-let list: listItem[] = $ref([
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemLong1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-]);
+let list: listItem[] = $ref();
 
 interface WaterFall {
   line1: listItem[];
@@ -88,22 +68,46 @@ let waterfallData: WaterFall = {
   line2: [],
 };
 
-// 处理瀑布流数据
-let i: any = '';
-for (i in list) {
-  if (Object.prototype.hasOwnProperty.call(list, i)) {
-    if (i % 2 === 0) {
-      waterfallData.line1.push(list[i]);
-    } else waterfallData.line2.push(list[i]);
-  }
-}
-
 const onClickLeft = () => {
   $router.back();
 };
 const onClickRight = () => {
   $router.push('/search');
 };
+
+// 类型获取数据
+const getData = () => {
+  // console.log(tempIndex);
+  // 类型
+  switch (tempIndex) {
+    case 'One':
+      list = cookDetail.getAllData();
+      break;
+    case 'Two':
+      list = cookDetail.getTypeData('today');
+      break;
+    case 'Three':
+      list = cookDetail.getTypeData('eazy');
+      console.log(list);
+      break;
+    default:
+      break;
+  }
+  if (list.length === 0) {
+    return;
+  }
+  // 处理瀑布流数据
+  let i: any = '';
+  for (i in list) {
+    if (Object.prototype.hasOwnProperty.call(list, i)) {
+      if (i % 2 === 0) {
+        waterfallData.line1.push(list[i]);
+      } else waterfallData.line2.push(list[i]);
+    }
+  }
+};
+
+getData();
 </script>
 
 <style lang="scss" scoped>

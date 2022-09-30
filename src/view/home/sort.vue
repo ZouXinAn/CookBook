@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 10:58:59
+ * @LastEditTime: 2022-09-30 17:06:49
  * @FilePath: \CookBooks\src\view\home\sort.vue
  * @Description: 
 -->
@@ -10,7 +10,7 @@
   <div id="sortDiv">
     <div class="inputSearch">
       <div class="searchBar" @click="goSearch">
-        <img src="@/assets/image/searchIcon.png" alt="" />
+        <img src="@/assets/image/searchIconGray.png" alt="" />
         <span style="margin-left: 0.2rem"> 搜索食材食谱 </span>
       </div>
     </div>

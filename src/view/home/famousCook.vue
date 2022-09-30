@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 17:17:28
+ * @LastEditTime: 2022-09-30 17:11:32
  * @FilePath: \CookBooks\src\view\home\famousCook.vue
  * @Description: 
 -->
@@ -10,7 +10,7 @@
   <div id="famousCook">
     <div class="bannerDiv">
       <span>名厨菜</span>
-      <img src="@/assets/image/famousBanner.png" alt="" />
+      <img src="@/assets/image/famousBanner.png" alt="" @click="goToDefail({ id: 314 })" />
     </div>
     <div class="famousItem">
       <div class="famousTitle">高颜值酒店名菜</div>

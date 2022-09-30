@@ -2,12 +2,12 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 10:46:55
+ * @LastEditTime: 2022-09-30 16:41:27
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
 <template>
-  <div id="homePage">
+  <div id="homePage" @scroll="handleScroll">
     <!-- <span>home</span>
   <p>homeee</p> -->
     <!-- <span>homePage</span>
@@ -34,7 +34,7 @@
         </span>
       </div>
       <div class="hotContent">
-        <normal-cook-book v-for="(item, i) in 4" :key="i" />
+        <normal-cook-book v-for="(item, i) in hotCook" :key="i" :item="item" />
       </div>
     </div>
     <div class="todayRecommond">
@@ -66,19 +66,21 @@
       <div class="knowledgeContent">
         <knowledge-item v-for="(item, i) in konwledgeList" :key="i" :class="{ ishaveSplit: i + 1 !== konwledgeList.length ? true : '' }" :item="item" />
       </div>
-      <loading-more />
+      <loading-more v-if="isHaveData" />
+      <p v-else style="text-align: center; margin: 0.2667rem 0; color: rgba(159, 159, 159, 1)">别拉啦，没有数据了！</p>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import normalCookBook from '@/components/normalCookBook.vue';
+// import normalCookBook from '@/components/normalCookBook.vue';
 import knowledgeItem from '@/components/knowledgeItem.vue';
 import { useRouter } from 'vue-router';
 import LoadingMore from '@/components/LoadingMore.vue';
 import { nextTick } from '@vue/runtime-core';
 import { ref } from 'vue';
 import { setScorll } from '@/util/common';
+import { CookDetail } from '@/util/defaultData';
 
 // setScorll(document.querySelector('#homePage'));
 // setTimeout(() => {
@@ -102,7 +104,13 @@ const goSearch = () => {
   $router.push('/search');
 };
 
-const konwledgeList = ref([
+let cookDetail = new CookDetail();
+// @ts-ignore
+let hotCook = $ref([]);
+// 获取热门菜谱
+hotCook = cookDetail.getHotCook();
+
+let konwledgeList = ref([
   {
     type: 1,
     id: 101,
@@ -121,6 +129,9 @@ const konwledgeList = ref([
     url: 'knowledge/knowS1.png',
     title: '番茄茄红素吸收率提升50%的4大绝招让你吃出惊人美肌力',
   },
+]);
+
+let restKnow = ref([
   {
     type: 1,
     id: 104,
@@ -131,15 +142,32 @@ const konwledgeList = ref([
     type: 3,
     id: 105,
     url: 'knowledge/knowS2.png',
-    title: '哺乳妈妈必知的黄金 高品质母乳的6大关 键营养素',
+    title: '哺乳妈妈必知的黄金高品质母乳的6大关键营养素',
   },
   {
     type: 2,
     id: 106,
     url: ['knowledge/knowI3.png', 'knowledge/knowI4.png'],
-    title: ['男人吃香菜好吗 男人香菜吃多了... ', '西蓝花焯水几分钟 能熟西蓝花焯水... '],
+    title: ['男人吃香菜好吗 男人香菜吃多了... ', '西蓝花焯水几分钟能熟 西蓝花焯水... '],
   },
 ]);
+
+let isHaveData = ref(true);
+
+const handleScroll = (e: any) => {
+  const { scrollTop, clientHeight, scrollHeight } = e.target;
+  if (scrollTop + clientHeight === scrollHeight) {
+    // console.log('---底部了,调接口');
+    setTimeout(() => {
+      if (restKnow.value.length > 0) {
+        // @ts-ignore
+        konwledgeList.value = konwledgeList.value.concat(restKnow.value.splice(0, 2));
+      } else {
+        isHaveData.value = false;
+      }
+    }, 800);
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -2,20 +2,38 @@
  * @Author: zoujiahao
  * @Date: 2022-08-30 11:00:58
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-08-30 17:28:53
- * @FilePath: \CookBook\src\components\normalCookBook.vue
+ * @LastEditTime: 2022-09-30 16:52:38
+ * @FilePath: \CookBooks\src\components\normalCookBook.vue
  * @Description: 
 -->
 <template>
-  <div id="normalCookBook">
-    <img src="@/assets/image/tempImg.png" alt="" />
-    <span class="bookTitle">四味香肠</span>
-    <span class="bookAuthor">小心安</span>
-    <!-- 318px 240px -->
+  <div id="normalCookBook" @click="goToDetail">
+    <img :src="getUrl(item.url)" alt="" />
+    <span class="bookTitle">{{ item.title }}</span>
+    <span class="bookAuthor">{{ item.author }}</span>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { getUrl } from '@/util/common';
+import { ref } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
+const $router = useRouter();
+const $props = defineProps<{ item: any }>();
+
+let loading = ref(true);
+
+setTimeout(() => {
+  loading.value = false;
+}, 1000);
+
+const goToDetail = () => {
+  $router.push({
+    path: '/cookDetail',
+    query: { cookId: $props.item.id },
+  });
+};
+</script>
 
 <style lang="scss" scoped>
 #normalCookBook {

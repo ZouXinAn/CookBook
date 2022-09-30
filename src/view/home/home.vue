@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 11:24:55
+ * @LastEditTime: 2022-09-30 09:06:43
  * @FilePath: \CookBooks\src\view\home\home.vue
  * @Description: 
 -->
@@ -60,7 +60,7 @@ const changePage = (v: string): void => {
 
 let $route = useRoute();
 nowPage.value = $route.path.replace('/', '') as string;
-console.log($route);
+// console.log($route);
 </script>
 
 <style lang="scss" scoped>
@@ -73,7 +73,6 @@ console.log($route);
     height: calc(100% - 70px);
     overflow: hidden scroll;
     position: relative;
-    // transition: all 0.2s;
   }
   .van-tabbar {
     position: fixed;

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 13:31:28
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 09:30:43
+ * @LastEditTime: 2022-09-30 16:19:23
  * @FilePath: \CookBooks\src\view\moreKnowledge\moreKnowledge.vue
  * @Description: 
 -->
@@ -118,6 +118,7 @@ getItem();
         // 681 353
         width: 9rem;
         height: 4.7067rem;
+        object-fit: cover;
       }
     }
   }

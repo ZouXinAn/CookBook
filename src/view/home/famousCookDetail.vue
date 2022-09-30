@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-29 11:25:25
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 17:15:12
+ * @LastEditTime: 2022-09-30 16:36:33
  * @FilePath: \CookBooks\src\view\home\famousCookDetail.vue
  * @Description: 
 -->
@@ -10,7 +10,7 @@
   <div id="famousCookDetail">
     <van-nav-bar :title="famousItemData.title" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
       <template #right>
-        <van-icon name="search" size="18" />
+        <van-icon name="share-o" size="18" />
       </template>
     </van-nav-bar>
     <div class="videoItem">
@@ -57,7 +57,9 @@
     </div>
     <div class="splitLineDiv"></div>
     <div class="cookStep">
-      <span class="fontTitle">烹饪步骤 (<span style="font-size: 0.32rem">共8步</span>)</span>
+      <span class="fontTitle"
+        >烹饪步骤 (<span style="font-size: 0.32rem">共{{ famousItemData.cookStep.length }}步</span>)</span
+      >
       <div v-for="(item, i) in famousItemData.cookStep" :key="i">
         <p>
           <img src="@/assets/image/stepIcon.png" alt="" />
@@ -69,6 +71,7 @@
     <div class="splitLineDiv"></div>
     <tips />
   </div>
+  <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
 </template>
 
 <script lang="ts" setup>
@@ -82,6 +85,24 @@ import { FamousItemType } from '@/util/commonType';
 let $route = useRoute();
 let $router = useRouter();
 let isShowControl = ref<boolean>(false);
+// @ts-ignore
+let isShowShare = $ref(false);
+// @ts-ignore
+let shareOptions = $ref([
+  [
+    { name: '微信', icon: 'wechat' },
+    { name: '朋友圈', icon: 'wechat-moments' },
+    { name: '微博', icon: 'weibo' },
+    { name: 'QQ', icon: 'qq' },
+  ],
+  [
+    { name: '复制链接', icon: 'link' },
+    { name: '分享海报', icon: 'poster' },
+    { name: '二维码', icon: 'qrcode' },
+    { name: '小程序码', icon: 'weapp-qrcode' },
+  ],
+]);
+
 // @ts-ignore
 const { proxy } = getCurrentInstance();
 // @ts-ignore
@@ -127,7 +148,7 @@ const onClickLeft = () => {
   $router.back();
 };
 const onClickRight = () => {
-  $router.push('/search');
+  isShowShare = true;
 };
 
 const getchefType = (tag: number) => {
@@ -176,6 +197,7 @@ const getChefColor = (tag: number) => {
     video {
       width: 100vw;
       height: 6.4rem;
+      object-fit: cover;
     }
     .playItem {
       position: absolute;

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-26 14:25:58
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-29 17:29:29
+ * @LastEditTime: 2022-09-30 16:32:43
  * @FilePath: \CookBooks\src\util\defaultData.ts
  * @Description: 
  */
@@ -83,15 +83,15 @@ export const knowItemData=[
         content:
           '在我们的生活中，经常听有人利用香蕉牛奶榨汁的方法来帮助减肥，但事实上使用香蕉牛奶汁是不可以帮助起到减肥作用的，肥胖发生的最主要的原因其实就是摄入的热量超过了消耗的热量，而减肥最重要的方法就是减少热量的摄入，使能量的消耗量有所增加。',
       },
-      { type: 'img', content: 'knowLedge/knowItem1.png' },
+      { type: 'img', content: 'knowledge/knowItem1.png' },
       { type: 'text', content: '香蕉、牛奶可以给我们的身体增加适量的蛋白质、矿物质以及维生素，有利于身体营养的吸收，也是有利于身体健康的。'},
-      { type: 'img', content: 'knowLedge/knowItem2.png' },
+      { type: 'img', content: 'knowledge/knowItem2.png' },
       {
         type: 'text',
         content: `在生活中不少超重的肥胖人群，都是非常希望可以快速且轻松减肥的，香蕉牛奶汁减肥法的特点是不均衡营养、吃东西，短时间体重会下降，但减少的是水、肌肉和少量的脂肪，而且会带来营养不均衡，损
           害身体，影响健康，还会出现体重的反弹，也叫减肥溜溜球效应，增加更多的脂肪，流失大量的肌肉，往往屡战屡败大病一场，不得不放弃。`,
       },
-      { type: 'img', content: 'knowLedge/knowItem3.png' },
+      { type: 'img', content: 'knowledge/knowItem3.png' },
       {
         type: 'text',
         content: `其实对于所有的减肥者来讲，如果想要控制好自己的体重的话，最健康的生活方式才是最重要的减肥方法。合理均衡的营养、科学适度的锻炼、戒烟、戒酒、心理的平衡、规律的作息、充足的睡眠最重要，所
@@ -108,16 +108,16 @@ export const knowItemData=[
       {
         type: 'text',content:'有很多朋友都听说过绍兴花雕，绍兴花雕酒在喝的时候有很多的讲究，今天小编就主要给大家介绍绍兴花雕的喝法，一起来看看吧!',
       },
-      { type: 'img', content: 'knowLedge/knowItem4.jpg' },
+      { type: 'img', content: 'knowledge/knowItem4.jpg' },
       {
         type: 'text',content:'1.绍兴花雕可以不加热，直接喝，这个时候可以在里面加入一些其他的食材，比如说话梅和生姜，会使得口感更加的丰富。绍兴花雕还可以和其他的果汁饮料一起勾兑着喝，非常适合女性朋友，这样喝口感更加柔和，非常的好喝!',
       },
       { type: 'text', content: '2.花雕酒最正宗的喝法是加热了之后喝，花雕酒加热到60度左右是合适的，如果温度再高，酒精就挥发了，这样酒的味道就变得不浓烈了。平日里开封的花雕酒千万别放太多时间，因为很容易就会氧化。'},
-      // { type: 'img', content: 'knowLedge/knowItem2.png' },
+      // { type: 'img', content: 'knowledge/knowItem2.png' },
       {
         type: 'text',content: `3.在冬天，花雕酒还有一种独特的喝法，就是和生姜以及枸杞子一起放入到锅里煮，煮十分钟之后，趁热喝下去，有非常好的养生保健的效果。一般来说，煮过的花雕酒在45摄氏度的左右喝是最合适的。`,
       },
-      { type: 'img', content: 'knowLedge/knowItem5.jpg' },
+      { type: 'img', content: 'knowledge/knowItem5.jpg' },
       {
         type: 'text',content: `花雕酒含有多种人体需要的营养物质，具有非常好的养生滋补效果，它的确是生活中喝酒时候的一个不错的选择，如果你们有机会购买到正宗的绍兴花雕酒的，一定要尝试一下，但是酒虽好不宜饮用过多!`,
       },
@@ -132,14 +132,14 @@ export const knowItemData=[
       {
         type: 'text',content:'胡萝卜在大家的生活中比较常见，是蔬菜中的一类，含有丰富的营养元素，多吃胡萝卜对于身体的好处是比较大的。现在也有许多人把胡萝卜榨成鲜汁来喝，这样营养更丰富，那么鲜榨胡萝卜汁怎么做呢？',
       },
-      { type: 'img', content: 'knowLedge/knowItem8.jpg' },
+      { type: 'img', content: 'knowledge/knowItem8.jpg' },
       {
         type: 'text',content:'首先准备食材：胡萝卜1根、蜂蜜2勺、温水适量。取适量新鲜胡萝卜去皮切成小丁；将胡萝卜丁倒入豆浆机，加入适量水位的温水和两勺蜂蜜，按果汁键功能就完成了；最后搅打完毕的胡萝卜汁，可以过滤也可以不过滤。',
       },
       {
         type: 'text',content:'每日喝1杯胡萝卜汁有祛斑作用，因为胡萝卜含有丰富的维生素A原，维生素A原在体内可转化为维生素A，维生素A具有滑润、强健皮肤的作用，并可防治皮肤粗糙及雀斑。',
       },
-      { type: 'img', content: 'knowLedge/knowItem9.jpg' },
+      { type: 'img', content: 'knowledge/knowItem9.jpg' },
       {
         type: 'text',content:'鲜榨胡萝卜汁的做法特别的简单，就是把胡萝卜、蜂蜜和水加入豆浆机中搅打，这样鲜榨胡萝卜汁就做成了，而且经常喝胡萝卜汁有祛斑作用。',
       },
@@ -154,7 +154,7 @@ export const knowItemData=[
       {
         type: 'text',content:'番茄是我很喜欢使用的蔬菜，酸甜又多汁，不管是搭配海鲜、面条吃起来都有很棒的异国风味，而且番茄的营养价值非常高，尤其里头含的茄红素是很强的抗氧化物，能够延缓老化及疾病的产生，皮肤也能越吃越好!如果想要当个美魔女，一定要常常吃番茄，而且只要吃对方法，吃一颗番茄可抵两颗喔!番茄该怎么吃才能发挥他的最大营养价值?快来看看着我的4大绝招吧',
       },
-      { type: 'img', content: 'knowLedge/knowItem6.jpg' },
+      { type: 'img', content: 'knowledge/knowItem6.jpg' },
       {
         type: 'text',content:'第一招、不要去皮!\n番茄皮的茄红素含量比果肉还多，尤其是越红的外皮，含量可能是果肉的两三倍，建议吃番茄时可连皮一起吃喔!',
       },
@@ -167,12 +167,130 @@ export const knowItemData=[
       {
         type: 'text',content:'第四招、生食可饭后吃\n如果要生吃番茄，可以饭后吃，因为肚子里已经有肉类油脂等食物，饭后吃番茄，更可以提高人体对番茄的吸收率唷!提供好吃又健康的番茄食谱， 大家一起多吃番茄。整颗番茄饭─奶油培根番茄饭',
       },
-      { type: 'img', content: 'knowLedge/knowItem7.jpg' },
+      { type: 'img', content: 'knowledge/knowItem7.jpg' },
       {
         type: 'text',content: `此外,建议大家选用番茄时要注意，番茄有许多种类，小颗的番茄含糖量较高，为水果类;大颗的番茄(如牛番茄、桃太郎番茄等)为蔬菜类。其中，大番茄好携带又可生食，建议蔬菜量摄食不足者、减重者，可以选择其为饭后点心，达到蔬菜建议摄取量及增加饱足感。`,
       },
     ],
-  }
+  },
+  {
+    id:'1-104',
+    title: '秋天为什么要多吃藕？秋天吃藕的好处这么多，就算不喜欢也要多吃。',
+    time: '2021-10-29',
+    source: '兔子说健康',
+    contentList: [
+      {
+        type: 'text',
+        content:
+          '秋天的饮食很重要，吃对了可以让寒冷的冬天更好过。在秋天，莲藕是应该多吃的食物。为什么冬天要吃莲藕呢？到了秋天，莲藕就会大量上市，在南方莲藕的主产区湖北、湖南、安徽等地，批发市场、菜市场的莲藕堆积如山，当地人买菜几乎都会买几个莲藕回家煲汤喝。',
+      },
+      { type: 'img', content: 'knowledge/knowItem10.webp' },
+      {
+        type: 'text',
+        content:
+          `好处1、美容养颜\n对于女性朋友而言，与其花大价钱买化妆品往脸上涂抹，还不如食补让自己由内而外健康起来，变得更加美丽。食补也是有讲究的，并不是所有的食物都具有美容养颜的作用。研究表明，女性在秋季多吃莲藕，其所含的维生素A、C和E都可以起到抗衰老、排毒素的作用，从而让女性容颜焕发光彩。`,
+      },
+      {
+        type: 'text',
+        content:
+          '好处2、缓解干燥\n秋高气爽，空气中的水分较少，很干燥，尤其是在北方，大风肆虐，很少降雨，所以会让人的皮肤、咽喉变得干燥，进而出现脱皮、咽喉不适、流鼻血等情况。在秋天，如果多吃莲藕，可以去秋燥，帮助缓解因干燥带来的不适症状。',
+      },
+      { type: 'img', content: 'knowledge/knowItem11.webp' },
+      {
+        type: 'text',
+        content:
+          '好处3、健脾开胃\n到了秋天，有不少人都会因为天气变化多端而没有胃口，不妨多吃莲藕，可以健脾养胃，让你的食欲变好，胃口大开，有助于预防一些秋冬季节的肠胃不适症状。',
+      },
+      {
+        type: 'text',
+        content: `秋天吃藕好处这么多，可别错过了。那么莲藕应该怎么吃呢？莲藕的吃法有很多，主要有煲汤、清炒、凉拌这几种。`,
+      },
+    ],
+  },
+  {
+    id:'3-105',
+    title: '哺乳妈妈必知的黄金高品质母乳的6大关键营养素',
+    time: '2020-07-25',
+    source: '小编',
+    contentList: [
+      {
+        type: 'text',content:'古语有云“民以食为天”，即饮食的重要。换现代科学的说法是，每日膳食营养素补充均衡的重要性。',
+      },
+      {
+        type: 'text',content:'营养素简单来说就是能供给人体生长、发育、劳动、并维持人体健康的各种物质，包含6种，即蛋白质、脂肪、碳水化合物、水、维生素、矿物质。',
+      },
+      
+      { type: 'img', content: 'knowledge/knowItem12.jpg' },
+      {
+        type: 'text',content:'蛋白质是人体细胞的主要组成成分，是新陈代谢修复受损组织的重要物质，我们身体每个细胞都是由蛋白质组成的，也就是说蛋白质是构成生命的物质基础。',
+      },
+      { type: 'img', content: 'knowledge/knowItem13.jpg' },
+      {
+        type: 'text',content:'脂肪是人体重要组成部分和储能物质，它不仅能给我们提供热能，是我们身体的热量储藏库，保持身体正常体温，同时还保护我们的体内脏器免受外力的冲击，还是我们体内激素的组成材料。',
+      },
+      {
+        type: 'text',content:'碳水化合物是供给身体生命活动所需能量的主要来源，我们身体的生长、运动、繁殖都需要其提供主要能源，同时，它也是构成人体组织的重要物质，因此我们在平时要科学补充碳水化合物，不能过多也不能过少，尤其要多进食含有大量膳食纤维的碳水化合物。',
+      },
+      {
+        type: 'text',content:'我们人体大部分是由水组成的，构成人体的主要物质，水在我们身体中发现代谢、载体运输功能、溶解、调节抑制等多种功能，我们人体如果缺乏水，就会出现生命的危险。',
+      },
+      { type: 'img', content: 'knowledge/knowItem14.jpg' },
+      {
+        type: 'text',content: `维生素维持我们身体健康必不可少的物质，起到调节人体物质的功能，我们身体如果长时间缺乏某种维生素，往往会出现严重生理障碍。`,
+      },
+    ],
+  },
+  {
+    id:'2-106-l',
+    title: '男人吃香菜好吗?香菜有什么功效呢？',
+    time: '2021-4-25',
+    source: '王老师',
+    contentList: [
+      {
+        type: 'text',content:'香菜是一种很常见的调味蔬菜，传统中医认为，香菜性温味甘，能健胃消食，发汗透疹，利尿通便，驱风解毒。《本草纲目》说：“胡荽辛温香窜，内通心脾，外达四肢。”《罗氏会约医镜》谓“辟一切不正之气，散风寒、发热头痛，消谷食停滞，顺二便，去目翳，益发痘疹。”',
+      },
+      { type: 'img', content: 'knowledge/knowItem15.webp' },
+      {
+        type: 'text',content:'现代研究发现，香菜之所以香，获得香菜的美名，主要是因为它含有挥发油和挥发性香味物质。香菜营养丰富，香菜内含维生素c、胡萝卜素、维生素b1、b2等，同时还含有丰富的矿物质，如钙、铁、磷、镁等，其挥发油含有甘露糖醇、正葵醛、壬醛和芳樟醇等，可开胃醒脾。香菜内还含有苹果酸钾等。香菜中含的维生素c的量比普通蔬菜高得多，一般人食用7～10克香菜叶就能满足人体对维生素c的需求量;香菜中所含的胡萝卜素要比西红柿、菜豆、黄瓜等高出10倍多。',
+      },
+      { type: 'img', content: 'knowledge/knowItem16.webp' },
+      { type: 'text', content: '香菜里含有大量黑色素,经常吃的话,皮肤容易变黑，不过常吃香菜可以提高视力，专家认为它的保健和药用价值不可忽视。香菜所含的物质,可起到清热解毒,防治荨麻和止痒的作用。有研究资料证明,由于香菜含有多种维生素,它的清热能,对提高视力、减少眼疾具有很好的作用。'},
+      {
+        type: 'text',content: `中医认为香菜性温味甘，能健胃消食，发汗透疹，利尿通便，驱风解毒。香菜营养丰富，香菜内含维生素c、胡萝卜素、维生素b1、b2等，同时还含有丰富的矿物质，如钙、铁、磷、镁等。香菜内还含有苹果酸钾等。香菜中含的维生素c的量比普通蔬菜高得多，一般人食用7～10克香菜叶就能满足人体对维生素c的需求量;香菜中所含的胡萝卜素要比西红柿、菜豆、黄瓜等高出10倍多。`,
+      },
+      { type: 'img', content: 'knowledge/knowItem17.webp' },
+      {
+        type: 'text',content: `通过上面小编给大家介绍的香菜的功效，大家是否对香菜有着重新的认识呢?还会认为香菜对男人的精子是有伤害的吗?这个说法是没有科学的依据的哦!香菜中富含多种的维生素，对提高视力、减少眼疾具有很好的作用哦!`,
+      },
+    ],
+  },
+  {
+    id:'2-106-r',
+    title: '西蓝花焯水几分钟能熟?',
+    time: '2020-12-03',
+    source: '肉丸说车',
+    contentList: [
+      {
+        type: 'text',content:'西兰花又叫花菜，原产地是意大利，19世纪末传入中国。因其营养成分含量高，矿物质含量也非常的丰富，是一些其他类蔬菜所无法比拟的，所以西兰花有着蔬菜之王的称呼',
+      },
+      { type: 'img', content: 'knowledge/knowItem18.webp' },
+      {
+        type: 'text',content:'在各种各样的蔬菜中，哪种营养价值最高，你可能觉得很难比较。不过，日本最近一项研究得出结论：西蓝花的平均营养价值及防病作用远远超出其他蔬菜，名列第一。',
+      },
+      {
+        type: 'text',content:'西兰花焯水一般三分钟能熟，西兰花焯水三分钟以后捞出即可。一般西兰花焯水再吃比较好。西兰花的味道有点涩，也很易变色，所以焯水可以保容持西兰花的绿色、还可以去除西兰花中的涩味以及其他不好的物质，焯水后再炒西兰花味道会更好。',
+      },
+      { type: 'img', content: 'knowledge/knowItem19.webp' },
+      { type: 'text', content: '一般焯水时间太短，焯水的作用就太小了，焯水时间太长，会让水溶性的营养成分损失更多，不同蔬菜的焯水时间也是不同的，对西兰花这种蔬菜来说，一般焯水3分钟就足够了。'},
+      {
+        type: 'text',content: `西蓝花中的营养成分，不仅含量高，而且十分全面，主要包括蛋白质、碳水化合物、脂肪、矿物质、维生素C和胡萝卜素等。此外，西蓝花中矿物质成分比其他蔬菜更全面，钙、磷、铁、钾、锌、锰等含量都很丰富，比同属于十字花科的白菜花高出很多。`,
+      },
+      { type: 'img', content: 'knowledge/knowItem20.webp' },
+      {
+        type: 'text',content: `通过上面小编给大家介绍的香菜的功效，大家是否对香菜有着重新的认识呢?还会认为香菜对男人的精子是有伤害的吗?这个说法是没有科学的依据的哦!香菜中富含多种的维生素，对提高视力、减少眼疾具有很好的作用哦!`,
+      },
+    ],
+  },
 ]
 
 
@@ -630,4 +748,797 @@ export class FamousData {
   getDataById(id:number|string){
     return this.data.find(item=>item.id===id)
   }
+}
+
+
+
+export class CookDetail{
+  data:any[]=[
+    {
+      id:101,
+      title:'麻婆豆腐',
+      author:'小心安',
+      cookType:'家常菜',
+      Module:['hot','today','eazy'],
+      url:'cookDetail/cookItem1.png',
+      bigUrl:'cookDetail/cookBigItem1.png',
+      photoType:'Short',
+      seeNo:'20.4W',
+      starNo:'18256',
+      desc:'麻婆豆腐的特点是：在细嫩雪白的豆腐上，点缀着棕红色的牛肉酥馅，碧绿色的蒜苗，红红的辣油。视之如玉镶琥珀， 闻之则浓香扑鼻，食之更是集麻、辣、烫、嫩、酥、鲜、香 于一馔，让你越吃越上瘾',
+      perpareList:[
+        {
+          name: '豆腐',
+          num: 400,
+          unit: 'g',
+        },
+        {
+          name: '肉末',
+          num: 150,
+          unit: 'g',
+        },
+        {
+          name: '蒜蓉酱',
+          num: 2,
+          unit: '瓣',
+        },
+        {
+          name: '玉米淀粉',
+          num: 1,
+          unit: '勺',
+        },
+        {
+          name: '蚝油',
+          num: 1,
+          unit: '勺',
+        },
+
+        {
+          name: '生抽',
+          num: 1,
+          unit: '勺',
+        },
+        {
+          name: '豆瓣酱',
+          num: 1,
+          unit: '大勺',
+        },
+        {
+          name: '姜末',
+          num: 150,
+          unit: 'g',
+        },
+        {
+          name: '花椒粒',
+          num: '',
+          unit: '适量',
+        },
+        {
+          name: '食用油',
+          num: '',
+          unit: '适量',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep1-1.jpg',
+          desc: '准备食材：豆腐400克、肉末50克、小葱1棵、大蒜3瓣、郫县豆瓣酱1汤匙、呷哺台式XO麻婆炒酱80克、生抽1勺、花椒粉0.5克、米醋1克、香油1茶匙、黄酒1茶匙、白糖1茶匙、水淀粉1小碗、白芝麻适量；',
+        },
+        {
+          url: 'cookDetail/cookStep1-2.jpg',
+          desc: '豆腐切小块，锅里水开后放一点盐，放入豆腐焯一分钟。',
+        },
+        {
+          url: 'cookDetail/cookStep1-3.jpg',
+          desc: '一块豆腐煮的时候可放2克左右盐一起煮，这样盐的渗透压会更快逼出豆腐里的水分，而且会让豆腐有一点点的咸味，记得这个程序一定要做，想做出好的麻婆豆腐这是关键步骤。',
+        },
+        {
+          url: 'cookDetail/cookStep1-4.jpg',
+          desc: '豆腐要煮差不多2-3分钟（小火，大火容易滚碎豆腐），差不多豆腐微微有些膨胀了就好了，但别捞出来，先泡着，避免豆腐捞上来后黏在一起；',
+        },
+        {
+          url: 'cookDetail/cookStep1-5.jpg',
+          desc: '锅中热油，迅速炒熟肉沫；（此时注意油温不要太高，慢慢炒，炒到肉末开始微黄）',
+        },
+        {
+          url: 'cookDetail/cookStep1-6.jpg',
+          desc: '出红油后下蒜末煸香，然后加入80克呷哺台式XO麻婆炒酱搅拌均匀。',
+        },
+        {
+          url: 'cookDetail/cookStep1-7.jpg',
+          desc: '汤煮开后加入黄酒1小勺，生抽一点点（只是提个味道，因郫县豆瓣已经很咸了，所以别放太多）；',
+        },
+        {
+          url: 'cookDetail/cookStep1-8.jpg',
+          desc: '调好味道后加入煮好的豆腐，直接捞出来放进汤汁里，稍微烧一个2-3分钟；',
+        },
+        {
+          url: 'cookDetail/cookStep1-9.jpg',
+          desc: '撒上0.5克花椒面，放少许提味即可；（花椒面不要早放，会黑，会使整锅豆腐变黑掉），再淋入1茶匙麻油和1克米醋提味即可出锅；',
+        },
+      ],
+    },
+    {
+      id:102,
+      title:'米粉蒸肉',
+      author:'希味淡',
+      cookType:'蒸肉',
+      Module:['hot','eazy'],
+      url:'cookDetail/cookItem2.png',
+      bigUrl:'cookDetail/cookBigItem2.jpg',
+      photoType:'Long',
+      seeNo:'18.2W',
+      starNo:'13492',
+      desc:'【粉蒸肉】此菜遍布全国各地，大江南北，上得厅堂，入得家常，人人都爱，家家都做。一个人一个口味，一个地方一个特色。五花肉最适合做粉蒸肉吃，这样吃起来不油腻。',
+      perpareList:[
+        {
+          name: '五花肉',
+          num: 200,
+          unit: '克',
+        },
+        {
+          name: '南瓜',
+          num: 1,
+          unit: '圈',
+        },
+        {
+          name: '蒸米粉',
+          num: 100,
+          unit: '克',
+        },
+        {
+          name: '黄豆酱',
+          num: 1,
+          unit: '勺',
+        },
+        {
+          name: '豆瓣酱',
+          num: 1,
+          unit: '小勺',
+        },
+
+        {
+          name: '生抽',
+          num: 1,
+          unit: '勺',
+        },
+        {
+          name: '生抽',
+          num: '',
+          unit: '少许',
+        },
+        {
+          name: '姜末',
+          num: 150,
+          unit: 'g',
+        },
+        {
+          name: '姜蒜末',
+          num: '',
+          unit: '适量',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep2-1.jpg',
+          desc: '首先把五花肉洗净，不去皮，切均匀厚度的片状放入碗中。',
+        },
+        {
+          url: 'cookDetail/cookStep2-2.jpg',
+          desc: '把料酒，生抽倒入，姜蒜末也放入用筷子混合均匀。再分别倒入黄豆酱和豆瓣酱用筷子混合均匀，腌制10分钟。接着倒入蒸米粉，每一块肉都要裹上米粉备用。',
+        },
+        {
+          url: 'cookDetail/cookStep2-3.jpg',
+          desc: '南瓜去皮去籽，切块裹上少许米粉，铺入容器底部。',
+        },
+        {
+          url: 'cookDetail/cookStep2-4.jpg',
+          desc: '把裹好的米粉的五花肉，一片片依次铺在南瓜上。',
+        },
+        {
+          url: 'cookDetail/cookStep2-5.jpg',
+          desc: '把食材容器放入蒸锅上，蒸制时间是：1小时。期间给蒸锅的水箱添加几次水，以防蒸干，必须纯净水这样食物更美味。',
+        },
+      ],
+    },
+    {
+      id:103,
+      title:'凉拌秋葵',
+      author:'美食小编',
+      cookType:'美容瘦身',
+      Module:['hot','today'],
+      url:'cookDetail/cookItem3.png',
+      bigUrl:'cookDetail/cookBigItem3.jpg',
+      photoType:'Long',
+      seeNo:'11.2W',
+      starNo:'1160421',
+      desc:'秋葵脆嫩多汁，滑润不腻，香味独特的秋葵被誉为人类最佳的蔬菜之一，其营养价值十分丰富，是男女共同饮食的不二之选。吃秋葵美容又补肾，因此，广大朋友在夏天可以多吃秋葵哦。 秋葵不适合炖烧，会使其营养物质大量流失，秋葵最佳吃法就是凉拌或者爆炒',
+      perpareList:[
+        {
+          name: '秋葵',
+          num: 200,
+          unit: '克',
+        },
+        {
+          name: '小葱',
+          num: 1,
+          unit: '根',
+        },
+        {
+          name: '红辣椒',
+          num: 1,
+          unit: '根',
+        },
+        {
+          name: '白砂糖',
+          num: 3,
+          unit: '克',
+        },
+        {
+          name: '生抽',
+          num: 5,
+          unit: '克',
+        },
+
+        {
+          name: '鲜辣露',
+          num: 2,
+          unit: '克',
+        },
+        {
+          name: '蒜末',
+          num: '',
+          unit: '适量',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep3-1.jpg',
+          desc: '清水煮沸，倒入秋葵，焯水30秒',
+        },
+        {
+          url: 'cookDetail/cookStep3-2.jpg',
+          desc: '小葱焯水30秒',
+        },
+        {
+          url: 'cookDetail/cookStep3-3.jpg',
+          desc: '用小葱绑起秋葵',
+        },
+        {
+          url: 'cookDetail/cookStep3-4.jpg',
+          desc: '倒入辅料，加醋、生抽、白砂糖、鲜辣露，搅拌均匀',
+        },
+        {
+          url: 'cookDetail/cookStep3-5.jpg',
+          desc: '倒入盛放秋葵盘中',
+        },
+      ],
+    },
+    {
+      id:104,
+      title:'百合南瓜',
+      cookType:'润燥止渴',
+      author:'蕾宝的烟味生活',
+      Module:['today','eazy'],
+      url:'cookDetail/cookItem4.png',
+      bigUrl:'cookDetail/cookBigItem4.jpg',
+      photoType:'Short',
+      seeNo:'9.99W',
+      starNo:'16425',
+      desc:'最近天气炎热，很多人容易上火、咳嗽等，所以蕾宝第一想到了南瓜蒸百合这一做法，将南瓜和百合同煮后食用，能清暑润肺、滋补营养，正适合现在食用，所以感兴趣的朋友下面来看看具体做法吧！',
+      perpareList:[
+        {
+          name: '老南瓜',
+          num: 1,
+          unit: '块',
+        },
+        {
+          name: '新鲜百合',
+          num: 1,
+          unit: '个',
+        },
+        {
+          name: '冰糖',
+          num: '',
+          unit: '适量',
+        },
+        {
+          name: '红枣',
+          num: '',
+          unit: '适量', 
+        },
+        {
+          name: '枸杞',
+          num: '',
+          unit: '适量', 
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep4-1.jpg',
+          desc: '准备所需食材，将鲜百合一片一片剥下来，再仔细清洗掉表面的泥土，沥干水分备用，而南瓜也切掉表面表皮，掏去内瓤，清洗干净备用；',
+        },
+        {
+          url: 'cookDetail/cookStep4-2.jpg',
+          desc: '将南瓜切成6厘米左右的厚片，均匀码放在盘中，再将鲜百合撒在表面即可；',
+        },
+        {
+          url: 'cookDetail/cookStep4-3.jpg',
+          desc: '将蒸碗放入蒸锅中，隔水蒸20分钟左右，南瓜能用筷子轻易戳透即可，再将蒸出来的多余汤汁倒入锅中；',
+        },
+        {
+          url: 'cookDetail/cookStep4-4.jpg',
+          desc: '红枣用面粉搓洗干净，剪成红枣片，去掉内核，再和枸杞、冰糖一起下入锅中，并根据蒸出来的南瓜汤汁的多少，加入适量清水，一起熬煮5分钟左右，煮出枸杞和红枣的味道；',
+        },
+        {
+          url: 'cookDetail/cookStep4-5.jpg',
+          desc: '另取一碗，倒入2勺清水、半勺淀粉，搅拌成均匀的薄淀粉水，倒入锅中，煮至糖水粘稠即可；',
+        },
+        {
+          url: 'cookDetail/cookStep4-6.jpg',
+          desc: '最后均匀淋在碗中即可，晶莹剔透，色泽诱人，看着就非常美味！',
+        },
+      ],
+    },
+    {  
+      id:105,
+      title:'四味香肠',
+      cookType:'腊肠',
+      author:'阿瓜的春夏秋冬',
+      Module:['today','hot'],
+      url:'cookDetail/cookItem5.png',
+      bigUrl:'cookDetail/cookBigItem5.jpg',
+      photoType:'Short',
+      seeNo:'8.65W',
+      starNo:'18564',
+      desc:'过了元旦，大家最期待的就是过春节啦！马上就要进入农历的腊月了，一提到腊月，立刻想到的是腊肉和香肠！腊肉以往是在腊月进行腌制，所以称作“腊肉”。每当过年，家家户户都会准备腊肉和香肠，腊味就成了很多小厨心中的年味。',
+      perpareList:[
+        {
+          name: '川味香肠用后臀尖',
+          num: 5,
+          unit: '斤',
+        },
+        {
+          name: '高度白酒',
+          num: 30,
+          unit: '毫升',
+        },
+        {
+          name: '白砂糖',
+          num: 20,
+          unit: '克',
+        },
+        {
+          name: '盐',
+          num: 55,
+          unit: '克',
+        },
+        {
+          name: '花椒面',
+          num: 30,
+          unit: '克',
+        },
+        {
+          name: '辣椒面',
+          num: 30,
+          unit: '克',
+        },
+        {
+          name: '花椒',
+          num: '',
+          unit: '适量', 
+        },
+        {
+          name: '肠衣',
+          num: '',
+          unit: '适量', 
+        },
+        {
+          name: '棉线',
+          num: '',
+          unit: '适量', 
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep5-1.jpg',
+          desc: '腌肉：将后臀尖（肥和瘦的比例是3：7）切成肉块。',
+        },
+        {
+          url: 'cookDetail/cookStep5-2.jpg',
+          desc: '将川味用的所有调料放进切好的肉中，拌匀后腌制12-24小时。',
+        },
+        {
+          url: 'cookDetail/cookStep5-3.jpg',
+          desc: '肠衣洗净后泡在清水中备用。',
+        },
+        {
+          url: 'cookDetail/cookStep5-4.jpg',
+          desc: '灌香肠：在塑料饮料瓶的瓶口1/3处将瓶口剪下，制成漏斗。肠衣的一头用棉线扎紧，另一头套在瓶口处。将腌好的肉填入漏斗，用筷子较粗的一头向下填充入肠衣。灌肉时中间不要留有空隙。',
+        },
+        {
+          url: 'cookDetail/cookStep5-5.jpg',
+          desc: '将所有肉都灌入肠衣，肠衣的开口处要用棉线扎紧。香肠灌好后，用针将肠衣扎一些小孔，防止肠衣在晾晒时涨破。',
+        },
+        {
+          url: 'cookDetail/cookStep5-6.jpg',
+          desc: '灌好的香肠放在干燥通风处晾晒10天左右，待肠衣变皱，香肠变成暗红色就可以了。',
+        },
+      ],
+    },
+    {
+      id:106,
+      title:'鸡蛋羹',
+      author:'美美家的厨房',
+      cookType:'美容瘦身',
+      Module:['hot','today'],
+      url:'cookDetail/cookItem6.png',
+      bigUrl:'cookDetail/cookBigItem6.jpg',
+      photoType:'Long',
+      seeNo:'3.39W',
+      starNo:'49064',
+      desc:'鸡蛋羹是我家老公最爱的一道菜，自从有了微波炉后，蒸鸡蛋羹更是简单方便了，一分半钟的时间，一碗香浓细滑的鸡蛋羹就上桌啦！放了少量的鸡粉，香气四溢哦！',
+      perpareList:[
+        {
+          name: '鸡蛋',
+          num: 1,
+          unit: '个',
+        },
+        {
+          name: '盐',
+          num: '1/2',
+          unit: '勺',
+        },
+        {
+          name: '鸡粉',
+          num: '1/2',
+          unit: '勺',
+        },
+        {
+          name: '葱花',
+          num: '',
+          unit: '少许',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep6-1.jpg',
+          desc: '鸡蛋打散，兑入一倍的清水，充分搅拌',
+        },
+        {
+          url: 'cookDetail/cookStep6-2.jpg',
+          desc: '拌好的蛋液过筛',
+        },
+        {
+          url: 'cookDetail/cookStep6-3.jpg',
+          desc: '放入适量盐,撒入适量鸡粉',
+        },
+        {
+          url: 'cookDetail/cookStep6-4.jpg',
+          desc: '拌匀后放入微波炉',
+        },
+        {
+          url: 'cookDetail/cookStep6-5.jpg',
+          desc: '高火1分半钟即可，出锅后撒上葱花',
+        },
+      ],
+    },
+    {  
+      id:107,
+      title:'果味双皮奶',
+      cookType:'美容养颜',
+      author:'午后柠檬树下的阳光9299',
+      Module:['eazy','hot'],
+      url:'cookDetail/cookItem7.png',
+      bigUrl:'cookDetail/cookBigItem7.jpg',
+      photoType:'Short',
+      seeNo:'5.57W',
+      starNo:'6956',
+      desc:'双皮奶是一种很多人都喜欢吃的美食，那么如何做才好吃呢？关于这个问题，小编就和大家分享一下我的经验，希望能够帮助到大家。如果大家喜欢小编的文章，记得关注小编并转发哦！谢谢大家！',
+      perpareList:[
+        {
+          name: '牛奶',
+          num: 180,
+          unit: '毫升',
+        },
+        {
+          name: '鸡蛋清',
+          num: 2,
+          unit: '个',
+        },
+        {
+          name: '白糖',
+          num: 1,
+          unit: '茶匙',
+        },
+        {
+          name: '芒果',
+          num: 10,
+          unit: '克',
+        },
+        {
+          name: '火龙果',
+          num: 10,
+          unit: '克',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep7-1.jpg',
+          desc: '将牛奶加入锅中，将牛奶煮至微开，并把准备的水果切丁。碗中打入2个鸡蛋清，放入白糖，充分搅拌均匀。',
+        },
+        {
+          url: 'cookDetail/cookStep7-2.jpg',
+          desc: '将煮开的牛奶加入鸡蛋清中，再次搅拌均匀。',
+        },
+        {
+          url: 'cookDetail/cookStep7-3.jpg',
+          desc: '然后用滤网过滤一下后撇去上面的浮沫。',
+        },
+        {
+          url: 'cookDetail/cookStep7-4.jpg',
+          desc: '然后盖上保鲜膜，用牙签扎上几个透气孔，上蒸锅蒸15分钟后，再闷5分钟。',
+        },
+        {
+          url: 'cookDetail/cookStep7-5.jpg',
+          desc: '最后，将蒸好的双皮奶上面加入水果丁，一道美味的双皮奶就做好了，希望大家能够喜欢。',
+        },
+      ],
+    },
+    {  
+      id:108,
+      title:'菠萝炒饭',
+      cookType:'菠萝',
+      author:'僖儿2005',
+      Module:['eazy','hot'],
+      url:'cookDetail/cookItem8.png',
+      bigUrl:'cookDetail/cookBigItem8.jpg',
+      photoType:'Short',
+      seeNo:'1.36W',
+      starNo:'14622',
+      desc:'现在四月份是菠萝上市的时间，满街的菠萝一个几块钱，便宜又美味，赶紧做了菠萝炒饭解解馋。',
+      perpareList:[
+        {
+          name: '菠萝',
+          num: 1,
+          unit: '个',
+        },
+        {
+          name: '豌豆',
+          num: 100,
+          unit: '克',
+        },
+        {
+          name: '米饭',
+          num: 1,
+          unit: '碗',
+        },
+        {
+          name: '鲜虾',
+          num: 100,
+          unit: '克',
+        },
+        {
+          name: '胡萝卜',
+          num: '半',
+          unit: '根',
+        },
+        {
+          name: '盐',
+          num: '',
+          unit: '适量',
+        },
+        {
+          name: '食用油',
+          num: '',
+          unit: '适量',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep8-1.jpg',
+          desc: '菠萝从三分之一处切开，取肉，放入盐水浸泡',
+        },
+        {
+          url: 'cookDetail/cookStep8-2.jpg',
+          desc: '电磁炉链接电源，放上搪瓷锅',
+        },
+        {
+          url: 'cookDetail/cookStep8-3.jpg',
+          desc: '豌豆先煮熟，胡萝卜切粒，启动火锅模式，火候设置900，锅内倒入食用油，放入豌豆和胡萝卜粒，炒熟',
+        },
+        {
+          url: 'cookDetail/cookStep8-4.jpg',
+          desc: '放入虾球，放入适量的盐和调味品，翻炒至所有配料熟透，关火。从电饭煲里取出煮好的米饭，倒入配菜内，拌匀',
+        },
+        {
+          url: 'cookDetail/cookStep8-5.jpg',
+          desc: '将菠萝肉倒入炒饭内，一样拌匀即可',
+        }, {
+          url: 'cookDetail/cookStep8-6.jpg',
+          desc: '将炒好的菠萝饭盛出，放入菠萝盛器内',
+        },
+      ],
+    },
+    {
+      id:109,
+      title:'秋葵炒蛋',
+      author:'美食小编',
+      cookType:'美容瘦身',
+      Module:['hot','today'],
+      url:'cookDetail/cookItem9.png',
+      bigUrl:'cookDetail/cookBigItem9.png',
+      photoType:'Long',
+      seeNo:'11.2W',
+      starNo:'1160421',
+      desc:'秋葵脆嫩多汁，滑润不腻，香味独特的秋葵被誉为人类最佳的蔬菜之一，其营养价值十分丰富，是男女共同饮食的不二之选。吃秋葵美容又补肾，因此，广大朋友在夏天可以多吃秋葵哦。 秋葵不适合炖烧，会使其营养物质大量流失，秋葵最佳吃法就是凉拌或者爆炒',
+      perpareList:[
+        {
+          name: '秋葵',
+          num: 200,
+          unit: '克',
+        },
+        {
+          name: '小葱',
+          num: 1,
+          unit: '根',
+        },
+        {
+          name: '红辣椒',
+          num: 1,
+          unit: '根',
+        },
+        {
+          name: '白砂糖',
+          num: 3,
+          unit: '克',
+        },
+        {
+          name: '生抽',
+          num: 5,
+          unit: '克',
+        },
+
+        {
+          name: '鲜辣露',
+          num: 2,
+          unit: '克',
+        },
+        {
+          name: '蒜末',
+          num: '',
+          unit: '适量',
+        },
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep3-1.jpg',
+          desc: '清水煮沸，倒入秋葵，焯水30秒',
+        },
+        {
+          url: 'cookDetail/cookStep3-2.jpg',
+          desc: '小葱焯水30秒',
+        },
+        {
+          url: 'cookDetail/cookStep3-3.jpg',
+          desc: '用小葱绑起秋葵',
+        },
+        {
+          url: 'cookDetail/cookStep3-4.jpg',
+          desc: '倒入辅料，加醋、生抽、白砂糖、鲜辣露，搅拌均匀',
+        },
+        {
+          url: 'cookDetail/cookStep3-5.jpg',
+          desc: '倒入盛放秋葵盘中',
+        },
+      ],
+    },
+    {  
+      id:110,
+      title:'麻辣小龙虾球',
+      cookType:'龙虾',
+      author:'灵子美食厨房',
+      Module:['today','hot'],
+      url:'cookDetail/cookItem10.png',
+      bigUrl:'cookDetail/cookBigItem10.jpg',
+      photoType:'Short',
+      seeNo:'1.43W',
+      starNo:'14005',
+      desc:'麻辣小龙虾，简称麻小，湖南特色小吃，又叫口味虾、长沙口味虾、香辣小龙虾、十三香小龙虾等。以小龙虾制成，口感麻辣鲜香。',
+      perpareList:[
+        {
+          name: '虾球',
+          num: 500,
+          unit: '克',
+        },
+        {
+          name: '生姜',
+          num: '',
+          unit: '少许',
+        },
+        {
+          name: '豆瓣酱',
+          num: 1,
+          unit: '勺',
+        },
+        {
+          name: '鲜虾',
+          num: 100,
+          unit: '克',
+        },
+        {
+          name: '酱油',
+          num: '',
+          unit: '适量',
+        },
+        {
+          name: '盐',
+          num: '',
+          unit: '适量',
+        },
+        {
+          name: '干辣椒',
+          num: 1,
+          unit: '个',
+        },{
+          name: '花椒',
+          num: '',
+          unit: '适量',
+        }
+      ],
+      cookStep:[
+        {
+          url: 'cookDetail/cookStep10-1.jpg',
+          desc: '锅烧热，加入色拉油；加入干辣椒和花椒，炒香；',
+        },
+        {
+          url: 'cookDetail/cookStep10-2.jpg',
+          desc: '再加入豆瓣酱炒香；',
+        },
+        {
+          url: 'cookDetail/cookStep10-3.jpg',
+          desc: '倒入处理好的虾球，翻炒均匀；加入姜丝，去腥；',
+        },
+        {
+          url: 'cookDetail/cookStep10-4.jpg',
+          desc: '加入酱油，和适量清水，煮五分钟；',
+        },
+        {
+          url: 'cookDetail/cookStep10-5.jpg',
+          desc: '一盘香喷喷的香辣虾球出锅了。',
+        },
+      ],
+    },
+  ]
+
+  getDataById(id:string|number){
+    return this.data.find(item=>item.id===id)
+  }
+
+  getHotCook(){
+    return this.data.filter(item=>[105,108,109,110].includes( item.id))
+  }
+  getAllData(){
+     return this.data
+  }
+
+  getRandom(){
+    let list =  this.data.reduce((pre,next)=>{
+       if (0.5-Math.random()>0) {
+         pre.push(next)
+       }
+       console.log(pre);
+       return pre
+     },[])
+     if (list.length===0) {
+       list.push(this.data[0])
+     }
+     return list
+  }
+
+  getTypeData(type:string){
+    return this.data.filter(item=>item.Module.includes(type))
+  }
+
+
 }

@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 13:25:57
+ * @LastEditTime: 2022-09-30 17:24:19
  * @FilePath: \CookBooks\src\view\search\search.vue
  * @Description: 
 -->
@@ -13,39 +13,54 @@
   <div id="search" :style="{ background: !isShowItem ? '#f2f3f5' : 'white' }">
     <div class="searchTop">
       <van-icon name="arrow-left" @click="getBack" />
-      <van-search v-model="searchValue" placeholder="搜索食材、菜谱" />
-      <span>搜索</span>
+
+      <!-- <img src="@/assets/image/searchIconGray.png" alt="" /> -->
+      <van-search v-model="searchValue" placeholder="搜索食材、菜谱" @change="searchAdd">
+        <template #left-icon>
+          <img src="@/assets/image/searchIconGray.png" style="height: 0.3867rem; width: 0.3867rem" alt="" />
+        </template>
+      </van-search>
+
+      <span @click="searchAdd">搜索</span>
     </div>
     <div v-show="isShowItem" class="searchBox">
       <div class="searchHistory">
         <p class="secondTitle">历史搜索</p>
-        <span>展开</span>
+        <span
+          v-show="allHistoryLength > 6"
+          @click="
+            () => {
+              isShowAll = !isShowAll;
+              getHistorySearch();
+            }
+          "
+          >{{ isShowAll ? '收起' : '展开' }}</span
+        >
       </div>
       <div class="searchItem">
-        <div>四味香肠</div>
-        <div>莲藕海带汤</div>
-        <div>花椒</div>
-        <div>猪蹄</div>
-        <div>糖醋脆皮豆腐</div>
-        <div>凉拌秋葵</div>
-        <div>青椒肉丝饼</div>
+        <div v-for="(item, i) in search.history" :key="i" @click="searchOne(item)">{{ item }}</div>
       </div>
-      <p style="margin: 0.4667rem 0 0.6667rem; text-align: center; font-size: 0.3467rem; color: rgba(143, 143, 143, 1)"><van-icon name="delete-o" style="margin-right: 0.1333rem" />清空历史搜索</p>
+      <p v-if="search.history.length === 0" style="text-align: center; color: rgb(143, 143, 143); margin-bottom: 0.3rem">暂无数据，请搜索!</p>
+      <p
+        v-else
+        style="margin: 0.4667rem 0 0.6667rem; text-align: center; font-size: 0.3467rem; color: rgba(143, 143, 143, 1); display: flex; justify-content: center; align-items: center"
+        @click="clearHistory"
+      >
+        <!-- <van-icon name="delete-o" style="margin-right: 0.1333rem" /> -->
+        <img src="@/assets/image/cashIcon.png" style="margin-right: 0.1333rem; width: 0.3467rem; height: 0.4rem" alt="" />
+        清空历史搜索
+      </p>
       <div class="searchGuess">
         <p class="secondTitle">猜你想搜</p>
-        <span>
+        <span @click="getGuessSearch">
           <img style="width: 0.4533rem; height: 0.3467rem; vertical-align: middle; margin-right: 0.1333rem" src="@/assets/image/load.png " alt="" />
           换一换
         </span>
       </div>
       <div class="searchItem">
-        <div>下酒</div>
-        <div>宝宝辅食</div>
-        <div>美容养颜饮品</div>
-        <div>鲫鱼烧豆腐</div>
-        <div>糖水</div>
-        <div>水晶虾饺</div>
-        <div>豆角</div>
+        <div v-for="(item, i) in search.guess" :key="i" @click="searchOne(item)">
+          {{ item }}
+        </div>
       </div>
     </div>
     <!-- DO瀑布流 -->
@@ -65,90 +80,25 @@
 
 <script lang="ts" setup>
 import { WaterFall } from '@/util/commonType';
-import { computed, onMounted, ref } from '@vue/runtime-core';
+import { CookDetail } from '@/util/defaultData';
+import { computed, onMounted, ref, watch } from '@vue/runtime-core';
 import { useRoute, useRouter } from 'vue-router';
 // import searchCookBook from '@/components/searchCookBook.vue';
 const searchValue = ref('');
 // @ts-ignore
-let list = $ref([
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemLong1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-  {
-    src: 'searchitemLong2.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'longImg',
-  },
-  {
-    src: 'searchitemShort1.png',
-    cookName: '麻婆豆腐',
-    labelName: '家常菜',
-    itemType: 'shortImg',
-  },
-]);
-
+let list = $ref();
+// @ts-ignore
+let search = $ref({
+  history: [],
+  guess: '',
+});
 let waterfallData: WaterFall = {
   line1: [],
   line2: [],
 };
+
+let allHistoryLength = ref<Number>(0);
+let isShowAll = ref<boolean>(false);
 
 let i: any;
 // 处理瀑布流数据
@@ -158,7 +108,7 @@ for (i in list) {
   } else waterfallData.line2.push(list[i]);
 }
 
-const isShowItem = computed({
+let isShowItem = computed({
   get: () => {
     if (searchValue.value === '') return true;
     else return false;
@@ -173,10 +123,88 @@ const getBack = () => {
   $router.back();
   // $router.go(-1);
 };
+
+// 搜索添加
+const searchAdd = () => {
+  let localHistory = localStorage.getItem('history');
+  if (localHistory) {
+    if (localHistory.indexOf(searchValue.value) === -1) {
+      localStorage.setItem('history', localHistory + ',' + searchValue.value);
+    }
+  } else {
+    localStorage.setItem('history', searchValue.value);
+  }
+  getHistorySearch();
+};
+// 获取搜索记录
+const getHistorySearch = () => {
+  if (localStorage.getItem('history')) {
+    let storge = String(localStorage.getItem('history')).split(',');
+    allHistoryLength.value = storge.length;
+    if (!isShowAll.value) {
+      search.history = storge.splice(0, 6);
+    } else {
+      search.history = storge;
+    }
+  } else {
+    allHistoryLength.value = 0;
+    search.history = [];
+  }
+};
+
 const $route = useRoute();
 if ($route.query.value) {
   searchValue.value = $route.query.value as string;
+  searchAdd();
 }
+
+// 类型获取数据
+const getData = () => {
+  const cookDetail = new CookDetail();
+  // 类型
+  list = cookDetail.getAllData();
+  if (list.length === 0) {
+    return;
+  }
+  // 处理瀑布流数据
+  let i: any = '';
+  for (i in list) {
+    if (Object.prototype.hasOwnProperty.call(list, i)) {
+      if (i % 2 === 0) {
+        waterfallData.line1.push(list[i]);
+      } else waterfallData.line2.push(list[i]);
+    }
+  }
+};
+
+getData();
+
+// 随机搜索
+const getGuessSearch = () => {
+  if (localStorage.getItem('guessSearch')) {
+    search.guess = localStorage
+      .getItem('guessSearch')
+      ?.split(',')
+      .sort(() => 0.5 - Math.random())
+      .splice(0, 8);
+    // console.log(search.guess);
+  } else {
+    localStorage.setItem('guessSearch', '下酒,宝宝辅食,美容养颜饮品,鲫鱼烧豆腐,糖水,水晶虾饺,豆角,懒人食物,麻辣烫,养生,美食,土匪猪肝,红烧甲鱼,韭菜,心肺');
+  }
+};
+
+getHistorySearch();
+getGuessSearch();
+
+const clearHistory = () => {
+  localStorage.removeItem('history');
+  getHistorySearch();
+};
+
+const searchOne = (item: string) => {
+  searchValue.value = item;
+  searchAdd();
+};
 </script>
 
 <style lang="scss" scoped>
@@ -189,12 +217,18 @@ if ($route.query.value) {
     display: flex;
     align-items: center;
     background: white;
-    .van-search {
+    :deep(.van-search) {
       width: 7.2rem;
       margin-left: 0.2667rem;
       .van-search__content {
-        background: #f2f3f5;
+        background: #f2f3f5 !important;
         border-radius: 0.1333rem;
+        .van-cell {
+          background: transparent;
+        }
+        .van-field__left-icon {
+          height: 0.42rem;
+        }
       }
     }
     > span {

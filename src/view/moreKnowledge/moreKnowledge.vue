@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 13:31:28
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 16:47:23
+ * @LastEditTime: 2022-09-29 09:30:43
  * @FilePath: \CookBooks\src\view\moreKnowledge\moreKnowledge.vue
  * @Description: 
 -->
@@ -36,13 +36,18 @@
 import { useRoute, useRouter } from 'vue-router';
 import { reactive, ref } from 'vue';
 import { getUrl } from '@/util/common';
-import { knowItemType } from '@/util/commonType';
+import { knowItemType, KnowItem } from '@/util/commonType';
 import { knowItemData } from '@/util/defaultData';
 const $route = useRoute();
 const $router = useRouter();
 let isShowShare = ref(false);
-let isHaveData = ref(false);
-let knowItem = ref({});
+let isHaveData = ref<boolean>();
+let knowItem = ref<KnowItem>({
+  title: '',
+  time: '',
+  source: '',
+  contentList: [{ type: '', content: '' }],
+});
 
 let shareOptions = reactive([
   [

@@ -2,16 +2,18 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 17:26:00
+ * @LastEditTime: 2022-09-29 11:24:55
  * @FilePath: \CookBooks\src\view\home\home.vue
  * @Description: 
 -->
 <template>
   <div id="home">
     <router-view v-slot="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
+      <!-- <transition name="van-fade"> -->
+      <!-- van-slide-left -->
+      <!-- van-fade -->
+      <component :is="Component" />
+      <!-- </transition> -->
     </router-view>
     <van-tabbar route @change="changePage">
       <van-tabbar-item replace to="homePage" name="homePage">
@@ -71,6 +73,7 @@ console.log($route);
     height: calc(100% - 70px);
     overflow: hidden scroll;
     position: relative;
+    // transition: all 0.2s;
   }
   .van-tabbar {
     position: fixed;

@@ -76,14 +76,7 @@
       </div>
     </div>
     <div class="splitLineDiv" style="margin-top: 0"></div>
-    <div class="tips">
-      <span class="fontTitle">小贴士</span>
-      <p style="margin-top: 0.4rem; line-height: 0.5333rem">烹饪一定要注意安全哦</p>
-      <p>
-        祝您用餐愉快
-        <img src="@/assets/image/smileIconYellow.png" style="height: 0.32rem; width: 0.32rem; margin-left: 0.1067rem" />
-      </p>
-    </div>
+    <tips />
     <van-share-sheet v-model:show="isShowShare" title="立即分享给好友" :options="shareOptions" />
   </div>
 </template>
@@ -91,6 +84,8 @@
 <script lang="ts" setup>
 import { useRoute, useRouter } from 'vue-router';
 import { getUrl } from '@/util/common';
+import tips from '@/components/tips.vue';
+
 let $route = useRoute();
 let $router = useRouter();
 
@@ -309,16 +304,6 @@ const onClickRight = () => {
         font-weight: 400;
         color: #242424;
       }
-    }
-  }
-  .tips {
-    padding: 0.4rem 0.5333rem;
-    p {
-      margin: 0;
-      padding: 0;
-      font-size: 0.4rem;
-      font-weight: 400;
-      color: #242424;
     }
   }
 }

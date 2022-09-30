@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 15:21:43
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-26 10:24:13
+ * @LastEditTime: 2022-09-29 11:03:09
  * @FilePath: \CookBooks\src\view\listPage\listPage.vue
  * @Description: 
 -->
@@ -125,6 +125,11 @@ const onClickRight = () => {
       padding-top: 0.32rem;
       display: flex;
       flex-direction: column;
+    }
+  }
+  :deep(.van-nav-bar__content) {
+    .van-icon {
+      color: #989898;
     }
   }
 }

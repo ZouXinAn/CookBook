@@ -5,6 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vue-tsc --noEmit && vite",
+    "check": "vue-tsc --noEmit",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },

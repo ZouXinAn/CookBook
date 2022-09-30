@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-23 11:14:01
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 16:00:52
+ * @LastEditTime: 2022-09-29 16:20:09
  * @FilePath: \CookBooks\src\util\commonType.ts
  * @Description: 
  */
@@ -20,6 +20,18 @@ export interface WaterFall {
 }
 
 
+export interface KnowItemContent{
+  type:string,
+  content:string,
+}
+
+export interface KnowItem{
+  title:string,
+  time:string,
+  source:string,
+  contentList:KnowItemContent[],
+}
+
 export interface knowItemType {
   id: number | string;
   title: string;
@@ -28,3 +40,24 @@ export interface knowItemType {
   contentList: [];
 }
 
+
+export interface FamousItemType{
+  id:number,
+    url:string,
+    title:string,
+    seeNo:string,
+    starNo:string,
+    videoUrl:string,
+    videoPoster:string,
+    videoTime:string,
+    chefName:string,
+    chefurl:string,
+    chefTag:number,
+    chefDesc:string,
+    paperList : {
+        name: string,
+        num: string,
+        unit: string,
+      }[]
+    cookStep:string[]
+}

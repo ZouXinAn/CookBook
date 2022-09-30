@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 17:20:31
+ * @LastEditTime: 2022-09-29 10:46:55
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -80,8 +80,6 @@ import { nextTick } from '@vue/runtime-core';
 import { ref } from 'vue';
 import { setScorll } from '@/util/common';
 
-setScorll();
-
 // setScorll(document.querySelector('#homePage'));
 // setTimeout(() => {
 //   console.log(document.querySelector('#home > div:nth-child(1)'));
@@ -89,6 +87,8 @@ setScorll();
 // }, 1000);
 
 const $router = useRouter();
+
+setScorll();
 
 const checkMore = (type: string) => {
   // console.log(type);

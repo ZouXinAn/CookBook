@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-31 13:52:03
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-28 10:08:05
+ * @LastEditTime: 2022-09-29 10:58:59
  * @FilePath: \CookBooks\src\view\home\sort.vue
  * @Description: 
 -->
@@ -30,6 +30,7 @@
 </template>
 
 <script lang="ts" setup>
+import { setScorll } from '@/util/common';
 import { treeSelectData } from '@/util/defaultData';
 import { useRouter } from 'vue-router';
 const $router = useRouter();
@@ -57,6 +58,8 @@ const treeItemEvent = (item: { name: string }) => {
 };
 
 getTreeData(0);
+
+setScorll();
 </script>
 
 <style lang="scss" scoped>

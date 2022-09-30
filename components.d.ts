@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchCookbook: typeof import('./src/components/searchCookbook.vue')['default']
+    Tips: typeof import('./src/components/tips.vue')['default']
     VanCell: typeof import('vant/es')['Cell']
     VanIcon: typeof import('vant/es')['Icon']
     VanNavBar: typeof import('vant/es')['NavBar']

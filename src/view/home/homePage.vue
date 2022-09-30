@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-08-29 11:01:31
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-30 22:13:34
+ * @LastEditTime: 2022-09-30 23:17:32
  * @FilePath: \CookBooks\src\view\home\homePage.vue
  * @Description: 
 -->
@@ -82,6 +82,10 @@ import { ref } from 'vue';
 import { setScorll } from '@/util/common';
 import { CookDetail } from '@/util/defaultData';
 
+// import VConsole from 'vconsole';
+// or init with options
+// const vConsole = new VConsole({ theme: 'dark' });
+
 // setScorll(document.querySelector('#homePage'));
 // setTimeout(() => {
 //   console.log(document.querySelector('#home > div:nth-child(1)'));
@@ -156,7 +160,8 @@ let isHaveData = ref(true);
 
 const handleScroll = (e: any) => {
   const { scrollTop, clientHeight, scrollHeight } = e.target;
-  if (scrollTop + clientHeight === scrollHeight) {
+  // console.log('handleScroll', Math.floor(scrollTop), clientHeight, scrollHeight, scrollTop + clientHeight >= scrollHeight - 2);
+  if (scrollTop + clientHeight >= scrollHeight - 2) {
     // console.log('---底部了,调接口');
     setTimeout(() => {
       if (restKnow.value.length > 0) {
@@ -165,7 +170,7 @@ const handleScroll = (e: any) => {
       } else {
         isHaveData.value = false;
       }
-    }, 800);
+    }, 500);
   }
 };
 </script>

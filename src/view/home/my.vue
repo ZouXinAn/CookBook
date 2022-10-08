@@ -2,7 +2,7 @@
  * @Author: zoujiahao
  * @Date: 2022-09-01 13:58:00
  * @LastEditors: zoujiahao
- * @LastEditTime: 2022-09-27 09:34:00
+ * @LastEditTime: 2022-10-07 17:46:52
  * @FilePath: \CookBooks\src\view\home\my.vue
  * @Description: 
 -->
@@ -28,11 +28,12 @@
     </div>
     <div class="cellDiv">
       <van-cell title="意见反馈" is-link />
-      <van-cell title="关于我们" is-link value="v.1.0.6" />
-      <div class="splitLineDiv"></div>
+      <van-cell title="关于我们" class="noLineCell" is-link value="v.1.0.6" />
+      <div class="splitLineDiv" style="margin-top: 0"></div>
       <van-cell title="隐私政策" is-link />
       <van-cell title="用户协议" is-link />
       <van-cell class="haveLineCell" title="更多设置" is-link />
+      <div></div>
     </div>
   </div>
 </template>
@@ -102,12 +103,22 @@
         border-bottom: 2px solid var(--van-cell-border-color);
       }
     }
-    :deep(.haveLineCell) {
-      // color: red;
-      // &:after {
-      //   content: 'a';
-      // }
+    :deep(.noLineCell) {
+      &:after {
+        content: '';
+        display: none;
+      }
     }
+    // :deep(.haveLineCell) {
+    //   position: relative;
+    //   &::after {
+    //     position: absolute;
+    //     box-sizing: border-box;
+    //     content: 'a';
+    //     pointer-events: none;
+    //     bottom: 0;
+    //   }
+    // }
   }
 }
 </style>
